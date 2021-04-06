@@ -1,8 +1,8 @@
-#include "Application.h"
+#include "glad/glad.h"
 
+#include "Application.h"
 #include <iostream>
 
-#include "Application.h"
 
 
 Application::Application(const char* name, int width, int height, int major, int minor)

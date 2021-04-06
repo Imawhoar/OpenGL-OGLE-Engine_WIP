@@ -10,7 +10,7 @@ Image::Image(const char* src) {
 	if (!LoadImage(src))
 		std::cout << "[ERROR -> Image] could not load image!";
 
-	m_ratio = (float)m_width / m_height;
+	m_ratio = static_cast<float>(m_width) / m_height;
 }
 
 bool Image::LoadImage(const char* src) {

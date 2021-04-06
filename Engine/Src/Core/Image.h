@@ -5,9 +5,9 @@ private:
 
 	unsigned char* m_data = nullptr;
 	int m_width{}, m_height{}, m_nrChannels{};
-	float m_ratio;
+	float m_ratio{};
 public:
-	Image() {}
+	Image() = default;
 	explicit Image(const char* src);
 
 public:
