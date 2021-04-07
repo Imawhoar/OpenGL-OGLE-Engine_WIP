@@ -11,8 +11,12 @@ class Shader
 {
 private:
 	uint32_t m_shaderID;
+
+	void InitializeShader(const std::string& vertexPath, const std::string& fragmentPath, const std::string& geometryPath);
+
 public:
 	Shader(const char* vertexPath, const char* fragmentPath, const char* geometryPath = nullptr);
+	Shader(const std::string& vertexPath, const std::string& fragmentPath, const std::string& geometryPath = "");
 
 	void use() const;
 

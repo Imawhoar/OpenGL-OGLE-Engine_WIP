@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 class Image {
 private:
 
@@ -9,10 +11,10 @@ private:
 public:
 	Image() = default;
 	explicit Image(const char* src);
-
+	explicit Image(const std::string& src);
 public:
-	bool LoadImage(const char* src);
-	bool IsValid();
+	bool LoadImage(const std::string& src);
+	bool IsValid() const;
 	unsigned char* GetData() const;
 	int GetWidth() const;
 	int GetHeight() const;

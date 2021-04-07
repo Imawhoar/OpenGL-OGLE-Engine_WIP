@@ -1,7 +1,18 @@
 #include "Shader.h"
 #include "glm/gtc/type_ptr.hpp"
-Shader::Shader(const char* vertexPath, const char* fragmentPath, const char* geometryPath) {
 
+Shader::Shader(const char* vertexPath, const char* fragmentPath, const char* geometryPath)
+{
+	InitializeShader(vertexPath, fragmentPath, geometryPath);
+}
+
+Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath, const std::string& geometryPath)
+{
+	InitializeShader(vertexPath, fragmentPath, geometryPath);
+}
+
+void Shader::InitializeShader(const std::string& vertexPath, const std::string& fragmentPath, const std::string& geometryPath)
+{
 	std::string vertexCode;
 	std::string fragmentCode;
 	std::string geometryCode;
@@ -30,7 +41,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath, const char* geo
 		fragmentCode = fShaderStream.str();
 
 		// if geometry shader path is present, also load a geometry shader
-		if (geometryPath != nullptr)
+		if (!geometryPath.empty())
 		{
 			gShaderFile.open(geometryPath);
 			std::stringstream gShaderStream;
@@ -59,7 +70,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath, const char* geo
 
 	// if geometry shader is given, compile geometry shader
 	unsigned int geometry;
-	if (geometryPath != nullptr)
+	if (!geometryPath.empty())
 	{
 		const char* gShaderCode = geometryCode.c_str();
 		geometry = glCreateShader(GL_GEOMETRY_SHADER);
@@ -71,16 +82,17 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath, const char* geo
 	glAttachShader(m_shaderID, vertex);
 	glAttachShader(m_shaderID, fragment);
 
-	if (geometryPath != nullptr)
+	if (!geometryPath.empty())
 		glAttachShader(m_shaderID, geometry);
 
 	glLinkProgram(m_shaderID);
 
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);
-	if (geometryPath != nullptr)
+	if (!geometryPath.empty())
 		glDeleteShader(geometry);
 }
+
 
 void Shader::use() const {
 	glUseProgram(m_shaderID);

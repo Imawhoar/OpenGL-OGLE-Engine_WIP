@@ -17,17 +17,17 @@ namespace FileHandler {
 	}
 
 	/// Tries to get the path to file recursively. 
-	inline std::string FindFilePath(PathDirectory entryDir, const char* fileName) {
+	inline std::string FindFile(PathDirectory entryDir, const char* fileName) {
 
 		if (!std::filesystem::exists(entryDir) || !std::filesystem::is_directory(entryDir))
 			return "";
 
-		for (const auto& p : std::filesystem::directory_iterator(entryDir))
+		for (const auto& currentPath : std::filesystem::directory_iterator(entryDir))
 		{
 
-			if (std::filesystem::is_directory(p.path()))
+			if (std::filesystem::is_directory(currentPath.path()))
 			{
-				PathDirectory path = FindFilePath(p.path(), fileName);
+				PathDirectory path = FindFile(currentPath.path(), fileName);
 
 				if (path.empty())
 					continue;
@@ -36,13 +36,15 @@ namespace FileHandler {
 			}
 			else
 			{
-				if (p.path().filename() == fileName)
-					return p.path().generic_string();
+				if (currentPath.path().filename() == fileName)
+					return currentPath.path().generic_string();
 			}
 		}
 		return "";
 	}
-	std::string FindFilePath(const char* fileName) { return FindFilePath(GetSolutionPath(), fileName); }
+	std::string FindFile(const char* fileName) { return FindFile(GetSolutionPath(), fileName); }
+	std::string FindResource(const char* fileName) { return FindFile(GetResourcePath(), fileName); }
+
 
 	inline void RenameFile(PathDirectory filePath, const char* newName) {
 
