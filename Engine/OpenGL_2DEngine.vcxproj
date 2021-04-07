@@ -163,11 +163,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Resources\Resource.h" />
     <ClInclude Include="Src\Input\InputCode.h" />
     <ClInclude Include="Src\Input\InputManager.h" />
-    <ClInclude Include="Src\Core\Image.h" />
+    <ClInclude Include="Src\Resources\Image.h" />
     <ClInclude Include="Src\Core\Renderer.h" />
-    <ClInclude Include="Src\Core\Shader.h" />
+    <ClInclude Include="Src\Resources\Shader.h" />
     <ClInclude Include="Src\Core\Sprite.h" />
     <ClInclude Include="Src\Core\Camera2D.h" />
     <ClInclude Include="Src\Core\Application.h" />
@@ -175,15 +176,15 @@
     <ClInclude Include="Src\Core\Texture.h" />
     <ClInclude Include="Src\Core\Transform.h" />
     <ClInclude Include="Src\Tools\FileHandler.h" />
-    <ClInclude Include="Src\Tools\SharedAssets.h" />
     <ClInclude Include="Src\Tools\TRegistry.h" />
     <ClInclude Include="Src\Tools\TSingleton.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Resources\Resource.cpp" />
     <ClCompile Include="Src\Input\InputManager.cpp" />
-    <ClCompile Include="Src\Core\Image.cpp" />
+    <ClCompile Include="Src\Resources\Image.cpp" />
     <ClCompile Include="Src\Core\Renderer.cpp" />
-    <ClCompile Include="Src\Core\Shader.cpp" />
+    <ClCompile Include="Src\Resources\Shader.cpp" />
     <ClCompile Include="Src\Core\Sprite.cpp" />
     <ClCompile Include="Src\Core\Camera2D.cpp" />
     <ClCompile Include="Src\Core\Application.cpp" />

@@ -5,11 +5,12 @@
 #include "Core/Camera2D.h"
 #include "Core/Renderer.h"
 #include "Core/Sprite.h"
-#include "Core/Shader.h"
 #include "Core/Texture.h"
 
+#include "Resources/Shader.h"
+#include "Tools/Registry/AssetRegistry.h"
+
 #include "Tools/FileHandler.h"
-#include "Tools/SharedAssets.h"
 
 int main() {
 
@@ -24,15 +25,15 @@ int main() {
 	Camera2D cam;
 	
 	Shader shader(vertexShaderPath, fragmentPath);
-	SharedAsset<Shader>::Instance().Insert("default", &shader);
-
+	AssetRegistry<Shader>::Instance().Insert("default", &shader);
+	AssetRegistry<Shader>::;
 	Texture texture(squarePath);
-	SharedAsset<Texture>::Instance().Insert("default", &texture);
+	AssetRegistry<Texture>::Instance().Insert("default", &texture);
 
 	
 	Sprite sprite(
-		SharedAsset<Texture>::Instance().Get("default"), 
-		SharedAsset<Shader>::Instance().Get("default"));
+		AssetRegistry<Texture>::Instance().Get("default"), 
+		AssetRegistry<Shader>::Instance().Get("default"));
 	
 	Renderer renderer(&cam);
 	renderer.AddRenderTarget(&sprite);

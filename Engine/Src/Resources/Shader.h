@@ -2,12 +2,11 @@
 #include <glad/glad.h>
 #include <glm/glm.hpp>
 
+#include "Resource.h"
 #include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
 
-class Shader
+
+class Shader : public Resource
 {
 private:
 	uint32_t m_shaderID;

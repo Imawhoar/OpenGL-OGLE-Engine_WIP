@@ -75,7 +75,6 @@ namespace FileHandler {
 		}
 
 		std::filesystem::remove(path);
-
 	}
 
 }

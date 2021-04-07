@@ -1,6 +1,10 @@
 #include "Shader.h"
 #include "glm/gtc/type_ptr.hpp"
 
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
 Shader::Shader(const char* vertexPath, const char* fragmentPath, const char* geometryPath)
 {
 	InitializeShader(vertexPath, fragmentPath, geometryPath);

@@ -1,8 +1,9 @@
 #pragma once
 
+#include "Resource.h"
 #include <string>
 
-class Image {
+class Image : public Resource{
 private:
 
 	unsigned char* m_data = nullptr;
