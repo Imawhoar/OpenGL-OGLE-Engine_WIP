@@ -19,15 +19,21 @@ int main() {
 	auto vertexShaderPath = FileHandler::FindResource("vertexShader.shader");
 	auto fragmentPath = FileHandler::FindResource("fragmentShader.shader");
 
+	
 
 	Application application("Engine", 1280, 720, 4, 4);
 	Camera2D cam;
 	Shader shader(vertexShaderPath, fragmentPath);
+	SharedAsset<Shader>::Instance().Set("default", &shader);
+
 	Texture texture(squarePath.c_str());
+	SharedAsset<Texture>::Instance().Set("default", &texture);
+
 	Sprite sprite(&texture, &shader);
 	Renderer renderer(&cam);
 	renderer.AddRenderTarget(&sprite);
-	/* Loop until the user closes the m_window */
+
+	
 	while (!application.WindowShouldClose())
 	{
 		glClear(GL_COLOR_BUFFER_BIT);

@@ -1,17 +1,20 @@
 #pragma once
+#include <unordered_set>
 #include "TShared.h"
-#include <algorithm>
-#include <set>
 
 template<typename V>
-class SharedAsset : public TShared<std::string, V>
+class SharedAsset : public TShared<std::string, V*>
 {
-	typedef std::set<std::string> KeyList;
+	typedef std::unordered_set<std::string> KeyList;
 public:
-
-	void Set(const std::string& key, const V& val) const override
+	KeyList& GetKeyList()
 	{
-
+		static std::set<std::string> returnVal;
+		for (auto const& key: this->m_registry)
+		{
+			returnVal.insert(key.first);
+		}
+		return GetKeyList();
 	}
 };
 

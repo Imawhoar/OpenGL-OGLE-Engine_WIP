@@ -10,6 +10,7 @@ void Texture::InitializeTexture() {
 	// set the texture wrapping parameters
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
 	// set texture filtering parameters
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -29,9 +30,9 @@ Texture::Texture(Image* image) {
 	}
 }
 
-Texture::Texture(const char* imgSrc) {
+Texture::Texture(const std::string& src) {
 	InitializeTexture();
-	m_image = new Image(imgSrc);
+	m_image = new Image(src);
 
 	if (m_image->IsValid()) {
 		if (m_image->GetNrChannels() == 4)

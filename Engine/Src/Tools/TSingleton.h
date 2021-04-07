@@ -1,20 +1,18 @@
-#pragma once
+#include <memory>
 
-template<typename T>
-class TSingleton
-{
-private:
-	TSingleton() {}
-protected:
-	virtual ~TSingleton() {}
-
+template < typename T >
+class TSingleton {
 public:
-	TSingleton(TSingleton const&) = delete;
-	void operator=(TSingleton const&) = delete;
+    static T& Instance() {
+        static const std::unique_ptr<T> instance{ new T{} };
+        return *instance;
+    }
 
-	static TSingleton& Instance()
-	{
-		static TSingleton singleton;
-		return singleton;
-	}
+    TSingleton(const TSingleton&) = delete;
+    TSingleton& operator= (const TSingleton) = delete;
+
+protected:
+    TSingleton() { };
+    virtual ~TSingleton() { }
+
 };
