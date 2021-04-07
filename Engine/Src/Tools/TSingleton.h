@@ -12,7 +12,7 @@ public:
     TSingleton& operator= (const TSingleton) = delete;
 
 protected:
-    TSingleton() { };
-    virtual ~TSingleton() { }
-
+    TSingleton() {};
+    virtual ~TSingleton() {}
 };
+

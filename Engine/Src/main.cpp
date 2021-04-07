@@ -5,7 +5,6 @@
 #include "Core/Camera2D.h"
 #include "Core/Renderer.h"
 #include "Core/Sprite.h"
-#include "Core/Image.h"
 #include "Core/Shader.h"
 #include "Core/Texture.h"
 
@@ -23,13 +22,18 @@ int main() {
 
 	Application application("Engine", 1280, 720, 4, 4);
 	Camera2D cam;
+	
 	Shader shader(vertexShaderPath, fragmentPath);
-	SharedAsset<Shader>::Instance().Set("default", &shader);
+	SharedAsset<Shader>::Instance().Insert("default", &shader);
 
-	Texture texture(squarePath.c_str());
-	SharedAsset<Texture>::Instance().Set("default", &texture);
+	Texture texture(squarePath);
+	SharedAsset<Texture>::Instance().Insert("default", &texture);
 
-	Sprite sprite(&texture, &shader);
+	
+	Sprite sprite(
+		SharedAsset<Texture>::Instance().Get("default"), 
+		SharedAsset<Shader>::Instance().Get("default"));
+	
 	Renderer renderer(&cam);
 	renderer.AddRenderTarget(&sprite);
 
@@ -38,7 +42,6 @@ int main() {
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.50f, 0.5f, 0.6f, 1.0f);
-
 
 		renderer.Render();
 

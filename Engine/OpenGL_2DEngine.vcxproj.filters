@@ -54,7 +54,7 @@
     <ClInclude Include="Src\Tools\TSingleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Tools\TShared.h">
+    <ClInclude Include="Src\Tools\TRegistry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\Tools\SharedAssets.h">

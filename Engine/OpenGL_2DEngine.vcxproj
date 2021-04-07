@@ -176,7 +176,7 @@
     <ClInclude Include="Src\Core\Transform.h" />
     <ClInclude Include="Src\Tools\FileHandler.h" />
     <ClInclude Include="Src\Tools\SharedAssets.h" />
-    <ClInclude Include="Src\Tools\TShared.h" />
+    <ClInclude Include="Src\Tools\TRegistry.h" />
     <ClInclude Include="Src\Tools\TSingleton.h" />
   </ItemGroup>
   <ItemGroup>
