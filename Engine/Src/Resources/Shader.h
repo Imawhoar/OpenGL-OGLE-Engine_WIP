@@ -5,7 +5,6 @@
 #include "Resource.h"
 #include <string>
 
-
 class Shader : public Resource
 {
 private:

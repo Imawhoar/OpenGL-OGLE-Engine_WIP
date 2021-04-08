@@ -1,17 +1,7 @@
 #pragma once
 #include <unordered_map>
-#include "../Resources/Resource.h"
-
 #include "TSingleton.h"
 
-template<typename K, typename V>
-class TRegistry;
-
-template<typename V>
-using AssetRegistry = TRegistry<std::string, V>;
-
-template<typename V>
-using ResourceRegistry = TRegistry<std::string, Resource>;
 
 template<typename K, typename V>
 class TRegistry final : public TSingleton<TRegistry<K, V>>

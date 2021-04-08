@@ -164,8 +164,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Src\Resources\Resource.h" />
-    <ClInclude Include="Src\Input\InputCode.h" />
-    <ClInclude Include="Src\Input\InputManager.h" />
+    <ClInclude Include="Src\Tools\Event\TDelegate.h" />
+    <ClInclude Include="Src\Tools\Input\InputCode.h" />
+    <ClInclude Include="Src\Tools\Input\InputContext.h" />
+    <ClInclude Include="Src\Tools\Input\InputManager.h" />
     <ClInclude Include="Src\Resources\Image.h" />
     <ClInclude Include="Src\Core\Renderer.h" />
     <ClInclude Include="Src\Resources\Shader.h" />
@@ -181,7 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Resources\Resource.cpp" />
-    <ClCompile Include="Src\Input\InputManager.cpp" />
+    <ClCompile Include="Src\Tools\Input\InputManager.cpp" />
     <ClCompile Include="Src\Resources\Image.cpp" />
     <ClCompile Include="Src\Core\Renderer.cpp" />
     <ClCompile Include="Src\Resources\Shader.cpp" />

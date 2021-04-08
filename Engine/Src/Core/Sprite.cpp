@@ -1,5 +1,5 @@
-#include "Image.h"
-#include "Shader.h"
+#include "../Resources/Image.h"
+#include "../Resources/Shader.h"
 #include "Texture.h"
 #include "Sprite.h"
 #include "glad/glad.h"

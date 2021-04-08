@@ -23,9 +23,8 @@ public:
 
 public:
 	void SetFrameBufferSize(int width, int height);
-	bool WindowShouldClose() {
-		return glfwWindowShouldClose(m_window);
-	}
+
+	bool WindowShouldClose() { return glfwWindowShouldClose(m_window); }
 	GLFWwindow* GetWindow();
 };
 

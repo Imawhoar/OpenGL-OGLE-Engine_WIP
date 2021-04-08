@@ -42,10 +42,10 @@
     <ClInclude Include="Src\Core\Transform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Input\InputManager.h">
+    <ClInclude Include="Src\Tools\Input\InputManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Input\InputCode.h">
+    <ClInclude Include="Src\Tools\Input\InputCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\Tools\FileHandler.h">
@@ -58,6 +58,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\Resources\Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tools\Input\InputContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tools\Event\TDelegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,7 +92,7 @@
     <ClCompile Include="Src\Core\Transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Input\InputManager.cpp">
+    <ClCompile Include="Src\Tools\Input\InputManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Src\main.cpp">
