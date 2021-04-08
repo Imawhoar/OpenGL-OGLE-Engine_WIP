@@ -57,28 +57,7 @@ void EngineStuff()
 
 
 
-struct some_struct {
-	int x;
-	void some_function(float x)
-	{
-		std::cout << x << std::endl;
-	}
-};
-
 int main() {
 
-	some_struct first, second, last;
-	second.x = 2;
-	first.x = 1;
-	TDelegate<void, float> temp;
-
-	//temp.Bind(&some_struct::some_function, &first);
-
-	temp.Bind([&](float x)
-	{
-			first.some_function(x);
-	});
-	
-	temp.Invoke(2.0f);
 	std::cin.get();
 }
