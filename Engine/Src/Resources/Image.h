@@ -5,7 +5,7 @@
 
 namespace OGLE
 {
-	class Image : public Resource {
+	class Image : public Resources::Resource {
 	private:
 
 		unsigned char* m_data = nullptr;
@@ -13,8 +13,8 @@ namespace OGLE
 		float m_ratio{};
 	public:
 		Image() = default;
+		Image(const std::string& src);
 		explicit Image(const char* src);
-		explicit Image(const std::string& src);
 	public:
 		bool LoadImage(const std::string& src);
 		bool IsValid() const;

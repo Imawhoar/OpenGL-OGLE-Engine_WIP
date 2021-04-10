@@ -108,4 +108,16 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\triangle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\square.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shaders\vertexShader.shader" />
+    <None Include="Resources\Shaders\fragmentShader.shader" />
+  </ItemGroup>
 </Project>

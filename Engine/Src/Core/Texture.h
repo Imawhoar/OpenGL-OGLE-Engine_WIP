@@ -15,7 +15,7 @@ namespace OGLE
 	private:
 		void InitializeTexture();
 	public:
-		explicit Texture(Image* image);
+		Texture(Image* image);
 		explicit Texture(const std::string& src);
 
 	public:

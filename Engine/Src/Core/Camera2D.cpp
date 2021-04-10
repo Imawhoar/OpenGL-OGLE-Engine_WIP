@@ -1,5 +1,4 @@
 #include "Camera2D.h"
-
 namespace OGLE
 {
 

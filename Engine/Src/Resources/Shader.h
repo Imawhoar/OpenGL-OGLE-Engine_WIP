@@ -8,7 +8,7 @@
 
 namespace OGLE
 {
-	class Shader : public Resource
+	class Shader : public Resources::Resource
 	{
 	private:
 		uint32_t m_shaderID;

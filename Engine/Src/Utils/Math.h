@@ -3,7 +3,7 @@
 #include "glm/fwd.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "Vector.h"
-
+#include "Matrix.h"
 namespace OGLE::Math
 {
 	template<typename T>

@@ -12,15 +12,15 @@ namespace OGLE
 		Transform();
 
 	public:
-		const glm::vec3& GetPosition() const;
+		const glm::vec3& GetPosition() const { return m_position; }
 		void SetPosition(const glm::vec3& pos);
 		void AddPosition(const glm::vec3& deltaPos);
 
-		const glm::vec3& GetScale() const;
+		const glm::vec3& GetScale() const { return m_scale; }
 		void SetScale(const glm::vec3& scale);
 		void AddScale(const glm::vec3& deltaScale);
 
-		const glm::vec3& GetRotation() const;
+		const glm::vec3& GetRotation() const { return m_rotation; }
 		void SetRotation(const glm::vec3& rot);
 		void AddRotation(const glm::vec3& deltaRot);
 

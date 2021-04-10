@@ -2,6 +2,8 @@
 #include <unordered_map>
 #include "TPureSingleton.h"
 
+
+
 namespace OGLE::Template
 {
 	template<typename K, typename V>
@@ -9,21 +11,25 @@ namespace OGLE::Template
 	{
 	public:
 
-		static V&   Get    (const K& key)			    { return TRegistry::Instance()._Get(key); }
-		static bool Exists (const K& key)			    { return TRegistry::Instance()._Exists(key); }
-		static void Insert (const K& key, const V& val) {	     TRegistry::Instance()._Insert(key, val); }
+		static V& Get(const K& key) { return TRegistry::Instance()._Get(key); }
+		static bool Exists(const K& key) { return TRegistry::Instance()._Exists(key); }
+		static void Insert(const K& key, const V& val) { TRegistry::Instance()._Insert(key, val); }
 
 		~TRegistry() override { m_registry.erase(m_registry.begin(), m_registry.end()); }
-	protected:
-		static std::unordered_map<K, V> m_registry;
 
-	protected:
+
+	private:
 		//Internals
-		V&	 _Get   (const K& key)				 { return m_registry[key]; }
-		bool _Exists(const K& key)				 { return m_registry.find(key); }
+		V& _Get(const K& key) { return m_registry[key]; }
+		bool _Exists(const K& key) { return m_registry.find(key); }
 		void _Insert(const K& key, const V& val) { m_registry[key] = val; }
+	public:
+		std::unordered_map<K, V> m_registry;
 
-		
 	};
-
+}
+namespace OGLE::Registry
+{
+	template<typename T>
+	using AssetRegistry = Template::TRegistry<std::string, T*>;
 }

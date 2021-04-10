@@ -196,6 +196,14 @@
     <ClCompile Include="Src\Core\Transform.cpp" />
     <ClCompile Include="Src\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\square.png" />
+    <Image Include="Resources\Images\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shaders\fragmentShader.shader" />
+    <None Include="Resources\Shaders\vertexShader.shader" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

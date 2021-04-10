@@ -1,4 +1,6 @@
 #include "Renderer.h"
+#include "../Utils/Math.h"
+#include "Sprite.h"
 #include <algorithm>
 #include "glm/gtc/matrix_transform.hpp"
 
@@ -29,7 +31,6 @@ namespace OGLE
 	}
 
 
-	float x = 0;
 	void Renderer::Render() {
 		
 		const auto viewMat = m_activeCamera->GetViewMatrix();
@@ -41,15 +42,15 @@ namespace OGLE
 		{
 			target->GetShader()->use();
 			target->bind();
-			glm::mat4 modelMatrix(1);
+			Matrix4 modelMatrix(1);
 
-			modelMatrix = glm::translate(modelMatrix, target->GetTransform().GetPosition());
+			modelMatrix = Math::Matrix::Translate(modelMatrix, target->GetTransform().GetPosition());
 
-			modelMatrix = glm::rotate(modelMatrix, target->GetTransform().GetRotation().x, glm::vec3(1, 0, 0));
-			modelMatrix = glm::rotate(modelMatrix, target->GetTransform().GetRotation().y, glm::vec3(0, 1, 0));
-			modelMatrix = glm::rotate(modelMatrix, target->GetTransform().GetRotation().y, glm::vec3(0, 0, 1));
+			modelMatrix = Math::Matrix::Rotate(modelMatrix, target->GetTransform().GetRotation().x, glm::vec3(1, 0, 0));
+			modelMatrix = Math::Matrix::Rotate(modelMatrix, target->GetTransform().GetRotation().y, glm::vec3(0, 1, 0));
+			modelMatrix = Math::Matrix::Rotate(modelMatrix, target->GetTransform().GetRotation().y, glm::vec3(0, 0, 1));
 
-			modelMatrix = glm::scale(modelMatrix, target->GetTransform().GetScale());
+			modelMatrix = Math::Matrix::Scale(modelMatrix, target->GetTransform().GetScale());
 
 			target->GetShader()->setMat4("modelMatrix", modelMatrix);
 			target->GetShader()->setMat4("viewMatrix", viewMat);

@@ -73,8 +73,8 @@ namespace OGLE
 			glViewport(0, 0, width, height);
 		}
 
-		[[nodiscard]] bool WindowShouldClose() const { return glfwWindowShouldClose(m_window); }
-		[[nodiscard]] GLFWwindow* GetWindow() const { return m_window; }
+		bool WindowShouldClose() const { return glfwWindowShouldClose(m_window); }
+		GLFWwindow* GetWindow() const { return m_window; }
 	};
 
 }
