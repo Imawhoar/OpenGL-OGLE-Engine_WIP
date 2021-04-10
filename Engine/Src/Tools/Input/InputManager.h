@@ -1,15 +1,25 @@
 #pragma once
+#include <unordered_map>
 
-#include "../TRegistry.h"
-#include "InputCode.h"
-#include "GLFW/glfw3.h"
+#include "../Template/TCallback.h"
+#include "../Template/TPureSingleton.h"
 
-
-class InputManager
+namespace OGLE::Input
 {
+	struct CallbackContext
+	{
 
-public:
+	};
 
-};
+	typedef std::unordered_map<std::string, Template::TCallback<CallbackContext>> EventMap;
+
+	class InputManager : Template::TPureSingleton<InputManager>
+	{
+		EventMap m_keyEvents;
+
+	public:
 
 
+	};
+
+}

@@ -1,12 +1,15 @@
 #pragma once
 
-#include "../Tools/TRegistry.h"
+#include "../Tools/Template/TRegistry.h"
 
-template<typename V>
-using AssetRegistry = TRegistry<std::string, V*>;
-
-class Resource
+namespace OGLE
 {
-	
-};
-
+	template<typename V>
+	using AssetRegistry = Template::TRegistry<std::string, V*>;
+}
+namespace OGLE::Resources
+{
+	class Resource
+	{
+	};
+}

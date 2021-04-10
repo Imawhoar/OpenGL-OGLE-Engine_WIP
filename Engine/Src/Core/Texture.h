@@ -1,19 +1,25 @@
 #pragma once
+#include "glad/glad.h"
+#include "../Resources/Image.h"
+
 #include <string>
-class Image;
 
-class Texture {
-private:
-	Image* m_image;
-	unsigned int m_textureID{};
+namespace OGLE
+{
 
-private:
-	void InitializeTexture();
-public:
-	explicit Texture(Image* image);
-	explicit Texture(const std::string& src);
+	class Texture {
+	private:
+		Image* m_image;
+		unsigned int m_textureID{};
 
-public:
-	void Bind();
-	Image* GetImage();
-};
+	private:
+		void InitializeTexture();
+	public:
+		explicit Texture(Image* image);
+		explicit Texture(const std::string& src);
+
+	public:
+		void Bind() const;
+		Image* GetImage() const;
+	};
+}

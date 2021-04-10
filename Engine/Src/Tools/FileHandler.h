@@ -4,7 +4,7 @@
 
 typedef std::filesystem::path PathDirectory;
 
-namespace FileHandler {
+namespace OGLE::FileHandler {
 	
 	inline std::string GetSolutionPath() {
 		auto temp = std::filesystem::current_path().generic_string();

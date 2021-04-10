@@ -1,14 +1,15 @@
 #pragma once
 #include <GLFW/glfw3.h>
 
-
-struct KeyEvent
+namespace OGLE::Input
 {
-	
-};
-struct InputContext
-{
+	struct KeyEvent
+	{
+
+	};
+	struct InputContext
+	{
 
 
-
-};
+	};
+}

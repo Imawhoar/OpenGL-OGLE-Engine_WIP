@@ -8,35 +8,32 @@
 #include "Core/Texture.h"
 
 #include "Resources/Shader.h"
-
-#include "Tools/TRegistry.h"
 #include "Tools/FileHandler.h"
-#include "Tools/Event/TDelegate.h"
 
 
 void EngineStuff()
 {
-	auto resourcePath = FileHandler::GetResourcePath();
-	auto squarePath = FileHandler::FindResource("square.png");
-	auto vertexShaderPath = FileHandler::FindResource("vertexShader.shader");
-	auto fragmentPath = FileHandler::FindResource("fragmentShader.shader");
+	auto resourcePath = OGLE::FileHandler::GetResourcePath();
+	auto squarePath = OGLE::FileHandler::FindResource("square.png");
+	auto vertexShaderPath = OGLE::FileHandler::FindResource("vertexShader.shader");
+	auto fragmentPath = OGLE::FileHandler::FindResource("fragmentShader.shader");
 
 
-	Application application("Engine", 1280, 720, 4, 4);
-	Camera2D cam;
+	OGLE::Core::Application application("Game", 1280, 720, 4, 4);
+	OGLE::Core::Camera2D cam;
 
-	Shader shader(vertexShaderPath, fragmentPath);
-	AssetRegistry<Shader>::Instance().Insert("default", &shader);
+	OGLE::Resources::Shader shader(vertexShaderPath, fragmentPath);
+	OGLE::Registry::AssetRegistry<OGLE::Resources::Shader>::Insert("default", &shader);
 
-	Texture texture(squarePath);
-	AssetRegistry<Texture>::Instance().Insert("default", &texture);
+	OGLE::Core::Texture texture(squarePath);
+	OGLE::Registry::AssetRegistry<OGLE::Core::Texture>::Insert("default", &texture);
 
 
-	Sprite sprite(
-		AssetRegistry<Texture>::Instance().Get("default"),
-		AssetRegistry<Shader>::Instance().Get("default"));
+	OGLE::Core::Sprite sprite(
+		OGLE::Registry::AssetRegistry<OGLE::Core::Texture>::Get("default"),
+		OGLE::Registry::AssetRegistry<OGLE::Resources::Shader>::Get("default"));
 
-	Renderer renderer(&cam);
+	OGLE::Core::Renderer renderer(&cam);
 	renderer.AddRenderTarget(&sprite);
 
 
@@ -54,10 +51,7 @@ void EngineStuff()
 
 	glfwTerminate();
 }
-
-
-
 int main() {
-
-	std::cin.get();
+	EngineStuff();
+	return 0;
 }
