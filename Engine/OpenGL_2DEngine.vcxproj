@@ -182,6 +182,7 @@
     <ClInclude Include="Src\Tools\FileHandler.h" />
     <ClInclude Include="Src\Tools\Template\TRegistry.h" />
     <ClInclude Include="Src\Tools\Template\TPureSingleton.h" />
+    <ClInclude Include="Src\Utils\Matrix.h" />
     <ClInclude Include="Src\Utils\Vector.h" />
   </ItemGroup>
   <ItemGroup>
