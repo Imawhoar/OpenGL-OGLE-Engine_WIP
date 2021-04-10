@@ -74,7 +74,7 @@ namespace OGLE
 		}
 
 		bool WindowShouldClose() const { return glfwWindowShouldClose(m_window); }
-		GLFWwindow* GetWindow() const { return m_window; }
+		[[nodiscard]] auto* GetWindow() const { return m_window; }
 	};
 
 }

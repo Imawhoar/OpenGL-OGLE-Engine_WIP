@@ -1,31 +1,54 @@
 #pragma once
 
-#include <glm/vec3.hpp>
+#include "../Utils/Vector.h"
 namespace OGLE
 {
 	class Transform {
-		glm::vec3 m_position{};
-		glm::vec3 m_scale{};
-		glm::vec3 m_rotation{};
+		Vector3 m_position{};
+		Vector3 m_scale{};
+		Vector3 m_rotation{};
 
 	public:
-		Transform();
+		Transform() {
+			m_position = {};
+			m_rotation = {};
+			m_scale = Vector3(1);
+		}
+
 
 	public:
-		const glm::vec3& GetPosition() const { return m_position; }
-		void SetPosition(const glm::vec3& pos);
-		void AddPosition(const glm::vec3& deltaPos);
+		const auto& GetPosition() const { return m_position; }
+		void SetPosition(const Vector3& pos) {
+			m_position = pos;
+		}
+		void AddPosition(const Vector3& deltaPos) {
+			m_position += deltaPos;
+		}
 
-		const glm::vec3& GetScale() const { return m_scale; }
-		void SetScale(const glm::vec3& scale);
-		void AddScale(const glm::vec3& deltaScale);
+		const auto& GetScale() const { return m_scale; }
+		void SetScale(const Vector3& scale) {
+			m_scale = scale;
+		}
+		void AddScale(const Vector3& deltaScale) {
+			m_scale += deltaScale;
+		}
 
-		const glm::vec3& GetRotation() const { return m_rotation; }
-		void SetRotation(const glm::vec3& rot);
-		void AddRotation(const glm::vec3& deltaRot);
+		const auto& GetRotation() const { return m_rotation; }
+		void SetRotation(const Vector3& rot) {
+			m_rotation = rot;
+		}
+		void AddRotation(const Vector3& deltaRot) {
+			m_rotation += deltaRot;
+		}
 
-		glm::vec3 GetForwardVector() const;
-		glm::vec3 GetRightVector() const;
-		glm::vec3 GetUpVector() const;
+		[[nodiscard]] auto GetForwardVector() const {
+			return Vector3(0, 0, 1);
+		}
+		[[nodiscard]] auto GetRightVector() const {
+			return Vector3(1, 0, 0);
+		}
+		[[nodiscard]] auto GetUpVector() const {
+			return Vector3(0, 1, 0);
+		}
 	};
 }

@@ -163,6 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Src\OGLE.h" />
     <ClInclude Include="Src\Utils\Math.h" />
     <ClInclude Include="Src\Utils\Color.h" />
     <ClInclude Include="Src\Resources\Resource.h" />
@@ -186,14 +187,6 @@
     <ClInclude Include="Src\Utils\Vector.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Resources\Resource.cpp" />
-    <ClCompile Include="Src\Resources\Image.cpp" />
-    <ClCompile Include="Src\Core\Renderer.cpp" />
-    <ClCompile Include="Src\Resources\Shader.cpp" />
-    <ClCompile Include="Src\Core\Sprite.cpp" />
-    <ClCompile Include="Src\Core\Camera2D.cpp" />
-    <ClCompile Include="Src\Core\Texture.cpp" />
-    <ClCompile Include="Src\Core\Transform.cpp" />
     <ClCompile Include="Src\main.cpp" />
   </ItemGroup>
   <ItemGroup>

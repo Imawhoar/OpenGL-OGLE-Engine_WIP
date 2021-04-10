@@ -1,5 +1,7 @@
 #pragma once
 #include "Transform.h"
+#include "../Utils/Matrix.h"
+#include "../Utils/Vector.h"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/glm.hpp"
 
@@ -10,8 +12,8 @@ namespace OGLE
 	private:
 
 		Transform m_transform{};
-		glm::mat4 m_viewMatrix{};
-		glm::mat4 m_projectionMatrix{};
+		Matrix4 m_viewMatrix{};
+		Matrix4 m_projectionMatrix{};
 
 		float m_left{}, m_right{};
 		float m_bottom{}, m_top{};
@@ -23,8 +25,19 @@ namespace OGLE
 
 
 	private:
-		void RecalculateView();
-		void RecalculateProjection();
+		void RecalculateView() {
+			m_viewMatrix = glm::lookAt(m_transform.GetPosition(),
+				m_transform.GetPosition() - m_transform.GetForwardVector(),
+				m_transform.GetUpVector());
+		}
+		void RecalculateProjection() {
+			m_projectionMatrix = glm::ortho(
+				m_left * m_size * m_aspectRatio,
+				m_right * m_size * m_aspectRatio,
+				m_bottom * m_size,
+				m_top * m_size,
+				m_nearClip, m_farClip);
+		}
 
 	public:
 		Camera2D(float left, float right, float bottom, float top, float near, float far) {
@@ -95,20 +108,52 @@ namespace OGLE
 		}
 
 	public:
-		void SetRotation(const glm::vec3& rot);
-		void AddRotation(const glm::vec3& deltaRot);
+		void SetRotation(const Vector3& rot) {
+			m_transform.SetRotation(rot);
+			RecalculateView();
+		}
+		void AddRotation(const Vector3& deltaRot) {
+			m_transform.AddRotation(deltaRot);
+			RecalculateView();
+		}
+		
+		void SetPosition(const Vector3& pos) {
+			m_transform.SetPosition(pos);
+			RecalculateView();
+		}
+		void AddPosition(const Vector3& deltaPos) {
+			m_transform.AddPosition(deltaPos);
+			RecalculateView();
+		}
 
-		void SetPosition(const glm::vec3& pos);
-		void AddPosition(const glm::vec3& deltaPos);
+		void SetOrthographicUnits(float left, float right, float bottom, float top) {
 
-		void SetOrthographicUnits(float left, float right, float bottom, float top);
-		void SetClipInterval(float near, float far);
+			m_left = left;
+			m_right = right;
+			m_bottom = bottom;
+			m_top = top;
+			RecalculateProjection();
+		}
+		void SetClipInterval(float near, float far) {
+			m_nearClip = near;
+			m_farClip = far;
+		}
 
-		void SetSize(float size);
-		void AddSize(float deltaSize);
+		void SetSize(float size) {
+			m_size = size;
+			RecalculateProjection();
+		}
+		void AddSize(float deltaSize) {
+			m_size += deltaSize;
+			RecalculateProjection();
+		}
 
-		const glm::mat4& GetViewMatrix() const;
+		[[nodiscard]] const auto& GetViewMatrix() const {
+			return m_viewMatrix;
+		}
 
-		const glm::mat4& GetProjectionMatrix() const;
+		[[nodiscard]] const auto& GetProjectionMatrix() const {
+			return m_projectionMatrix;
+		}
 	};
 }

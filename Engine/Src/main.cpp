@@ -1,15 +1,7 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
-#include "Core/Application.h"
-#include "Core/Camera2D.h"
-#include "Core/Renderer.h"
-#include "Core/Sprite.h"
-#include "Core/Texture.h"
-
-#include "Resources/Shader.h"
-#include "Tools/FileHandler.h"
-#include "Tools/Template/TRegistry.h"
+#include "OGLE.h"
 
 void EngineStuff()
 {

@@ -78,33 +78,12 @@
     <ClInclude Include="Src\Utils\Matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Src\OGLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Core\Camera2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Resources\Image.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Core\Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Resources\Shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Core\Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Core\Texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Core\Transform.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Resources\Resource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
