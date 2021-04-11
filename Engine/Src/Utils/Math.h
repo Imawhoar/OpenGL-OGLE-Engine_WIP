@@ -12,6 +12,9 @@ namespace OGLE::Math
 	inline T Min(T lhs, T rhs) { return lhs < rhs ? lhs : rhs; }
 
 	template<typename T>
+	inline T Abs(T value) { return value < 0 ? -value : value; }
+
+	template<typename T>
 	inline T Lerp(T start, T end, T alpha)
 	{
 		return (1 - alpha) * start + alpha * end;
@@ -21,7 +24,7 @@ namespace OGLE::Math
 	{
 		min = Min(min, max);
 		max = Max(min, max);
-		
+
 		if (current > max)
 			return max;
 		if (current < min)
@@ -34,28 +37,25 @@ namespace OGLE::Math
 	{
 		min = Min(min, max);
 		max = Max(min, max);
-		
+
 		float retVal = current / max;
 
 		return Clamp(retVal, 0, 1);
 	}
-	
+
 	template<typename T>
 	inline T Cos(T angle) { return cos(angle); }
 	template<typename T>
 	inline T Sin(T angle) { return sin(angle); }
 	template<typename T>
 	inline T Tan(T angle) { return tan(angle); }
-	
 	template<typename T>
 	inline T Atan2(T deltaX, T deltaY) { return atan2(deltaX, deltaY); }
 
 	template<typename T>
 	inline T Sqrt(T value) { return sqrt(value); }
-
 	template<typename T>
 	inline T Pow(T value, T pow) { return std::pow(value, pow); }
-
 	template<typename T>
 	inline T Pow2(T value) { Pow(value, 2); }
 
@@ -98,7 +98,7 @@ namespace OGLE::Math
 			return glm::reflect(lhs, rhs);
 		}
 
-		
+
 	}
 	namespace Matrix
 	{
@@ -107,19 +107,19 @@ namespace OGLE::Math
 		{
 			return glm::perspective(fov, aspect, near, far);
 		}
-		
+
 		template<int VL, int C, int R, typename T, glm::qualifier Q>
 		auto Translate(const glm::mat<C, R, T, Q>& model, const glm::vec<VL, T, Q>& delta)
 		{
 			return glm::translate(model, delta);
 		}
-		
+
 		template<int VL, int C, int R, typename T, glm::qualifier Q>
 		auto Scale(const glm::mat<C, R, T, Q>& model, const glm::vec<VL, T, Q>& delta)
 		{
 			return glm::scale(model, delta);
 		}
-		
+
 		template<int VL, int C, int R, typename T, glm::qualifier Q>
 		auto Rotate(const glm::mat<C, R, T, Q>& model, T angle, const glm::vec<VL, T, Q>& delta)
 		{
@@ -133,4 +133,4 @@ namespace OGLE::Math
 		}
 
 	}
-} 
+}

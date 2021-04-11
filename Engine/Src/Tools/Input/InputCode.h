@@ -1,6 +1,18 @@
 #pragma once
 namespace OGLE::Input
 {
+	enum class InputType
+	{
+		Key,
+		Mouse,
+		Joystick,
+
+	};
+	enum class PressType
+	{
+		Down = GLFW_PRESS,
+		Release = GLFW_RELEASE,
+	};
 	enum class KeyCode : int {
 		SPACE = 32,
 		APOSTROPHE = 39,
@@ -200,9 +212,5 @@ namespace OGLE::Input
 		AXIS_LEFT_TRIGGER = 4,
 		AXIS_RIGHT_TRIGGER = 5,
 	};
-	enum class ActionCode : int {
-		RELEASE,
-		PRESSED,
-		REPEAT
-	};
+
 }

@@ -60,10 +60,7 @@
     <ClInclude Include="Src\Resources\Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Tools\Input\InputContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Tools\Template\TCallback.h">
+    <ClInclude Include="Src\Tools\Template\Delegate\TCallback.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\Utils\Color.h">
@@ -79,6 +76,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\OGLE.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tools\Template\Delegate\TDelegateInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tools\Input\InputProfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Tools\Input\InputAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

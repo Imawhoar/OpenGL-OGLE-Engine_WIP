@@ -25,7 +25,7 @@ namespace OGLE::Template
 		//TODO: Make this actually fucking work.
 		//Bonus if you neck yourself when ur done.
 		template<typename TCaller>
-		void Bind(TCaller& caller, void(TCaller::* func)(TArgs... args))
+		void Bind(TCaller* caller, void(TCaller::* func)(TArgs... args))
 		{
 			m_events.emplace_back([&](TArgs... args)
 				{

@@ -14,10 +14,11 @@
 #include "Tools/FileHandler.h"
 
 #include "Tools/Input/InputCode.h"
-#include "Tools/Input/InputContext.h"
 #include "Tools/Input/InputManager.h"
+#include "Tools/Input/InputProfile.h"
+#include "Tools/Input/InputPair.h"
 
-#include "Tools/Template/TCallback.h"
+#include "Tools/Template/Delegate/TCallback.h"
 #include "Tools/Template/TPureSingleton.h"
 #include "Tools/Template/TRegistry.h"
 

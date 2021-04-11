@@ -164,12 +164,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Src\OGLE.h" />
+    <ClInclude Include="Src\Tools\Input\InputProfile.h" />
+    <ClInclude Include="Src\Tools\Input\InputAction.h" />
+    <ClInclude Include="Src\Tools\Template\Delegate\TDelegateInterface.h" />
     <ClInclude Include="Src\Utils\Math.h" />
     <ClInclude Include="Src\Utils\Color.h" />
     <ClInclude Include="Src\Resources\Resource.h" />
-    <ClInclude Include="Src\Tools\Template\TCallback.h" />
+    <ClInclude Include="Src\Tools\Template\Delegate\TCallback.h" />
     <ClInclude Include="Src\Tools\Input\InputCode.h" />
-    <ClInclude Include="Src\Tools\Input\InputContext.h" />
     <ClInclude Include="Src\Tools\Input\InputManager.h" />
     <ClInclude Include="Src\Resources\Image.h" />
     <ClInclude Include="Src\Core\Renderer.h" />
