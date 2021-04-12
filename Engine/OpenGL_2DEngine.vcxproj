@@ -163,6 +163,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Core\Cursor.h" />
+    <ClInclude Include="Src\Core\Point.h" />
     <ClInclude Include="Src\OGLE.h" />
     <ClInclude Include="Src\Tools\Input\InputProfile.h" />
     <ClInclude Include="Src\Tools\Input\InputAction.h" />

@@ -8,7 +8,7 @@ namespace OGLE
 {
 	class Sprite {
 		typedef std::vector<Texture*> TextureList;
-	
+
 	private:
 
 		Transform m_transform;
@@ -66,18 +66,12 @@ namespace OGLE
 
 	public:
 
-		[[nodiscard]] const auto& GetTransform() const {
-			return m_transform;
-		}
+		[[nodiscard]] const auto& GetTransform() const { return m_transform; }
+		[[nodiscard]] const auto* GetShader() const { return m_shader; }
 
-		
-		void SetShader(Shader* shader) {
-			m_shader = shader;
-		}
 
-		const Shader* GetShader() const {
-			return m_shader;
-		}
+		void SetShader(Shader* shader) { m_shader = shader; }
+
 
 
 		void RemoveTexture(Texture* texture)

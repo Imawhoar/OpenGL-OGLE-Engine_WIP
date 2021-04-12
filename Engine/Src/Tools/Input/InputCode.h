@@ -1,9 +1,9 @@
 #pragma once
-namespace OGLE::Input
+namespace OGLE
 {
 	enum class InputType
 	{
-		Key,
+		Keyboard,
 		Mouse,
 		Joystick,
 

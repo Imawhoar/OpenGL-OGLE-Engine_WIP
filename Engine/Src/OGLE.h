@@ -5,8 +5,12 @@
 #include "Core/Renderer.h"
 #include "Core/Sprite.h"
 #include "Core/Texture.h"
-#include "Core/Time.h"
 #include "Core/Transform.h"
+
+#include "Core/Time.h"
+#include "Core/Cursor.h"
+#include "Core/Point.h"
+
 
 #include "Resources/Image.h"
 #include "Resources/Shader.h"
@@ -16,7 +20,6 @@
 #include "Tools/Input/InputCode.h"
 #include "Tools/Input/InputManager.h"
 #include "Tools/Input/InputProfile.h"
-#include "Tools/Input/InputPair.h"
 
 #include "Tools/Template/Delegate/TCallback.h"
 #include "Tools/Template/TPureSingleton.h"

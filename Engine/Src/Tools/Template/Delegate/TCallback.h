@@ -5,7 +5,7 @@
 namespace OGLE::Template
 {
 	template<typename... TArgs>
-	class TCallback final
+	class TCallback
 	{
 	private:
 		std::vector<std::function<void(TArgs...)>> m_events;
