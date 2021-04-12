@@ -11,7 +11,6 @@ namespace OGLE
 
 	private:
 
-		Transform m_transform;
 		TextureList m_textures;
 		Shader* m_shader;
 
@@ -66,13 +65,10 @@ namespace OGLE
 
 	public:
 
-		[[nodiscard]] const auto& GetTransform() const { return m_transform; }
 		[[nodiscard]] const auto* GetShader() const { return m_shader; }
 
 
 		void SetShader(Shader* shader) { m_shader = shader; }
-
-
 
 		void RemoveTexture(Texture* texture)
 		{

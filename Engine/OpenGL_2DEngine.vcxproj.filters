@@ -60,7 +60,7 @@
     <ClInclude Include="Src\Resources\Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Tools\Template\Delegate\TCallback.h">
+    <ClInclude Include="Src\Tools\Template\Delegate\TDelegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\Utils\Color.h">
@@ -91,6 +91,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Src\Core\Cursor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Actors\ActorObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Actors\PlayerObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

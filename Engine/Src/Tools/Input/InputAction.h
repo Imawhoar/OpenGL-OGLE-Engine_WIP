@@ -2,32 +2,22 @@
 #include <GLFW/glfw3.h>
 
 #include "InputCode.h"
+#include "../../Utils/Math.h"
 
-#include "../Template/Delegate/TCallback.h"
+#include "../Template/Delegate/TDelegate.h"
 
 #define CAST(value, type) static_cast<type>(value)
 
 namespace OGLE::Input
 {
 	typedef std::function<void(float)> ActionCallBack;
-	inline static bool KeyDown(GLFWwindow* window, KeyCode key)
-	{
-		return glfwGetKey(window, CAST(key, int)) == CAST(PressType::Down, int);
-	}
-	inline static bool KeyUp(GLFWwindow* window, KeyCode key)
-	{
-		return glfwGetKey(window, CAST(key, int)) == CAST(PressType::Release, int);
-	}
 
-	inline static bool MouseDown(GLFWwindow* window, MouseCode mouse)
-	{
-		return glfwGetMouseButton(window, CAST(mouse, int)) == CAST(PressType::Down, int);
-	}
-	inline static bool MouseUp(GLFWwindow* window, MouseCode mouse)
-	{
-		return glfwGetMouseButton(window, CAST(mouse, int)) == CAST(PressType::Release, int);
-	}
-
+	static bool KeyDown(GLFWwindow* window, KeyCode key)        { return glfwGetKey(window, CAST(key, int)) == CAST(PressType::Down, int); }
+	static bool KeyUp(GLFWwindow* window, KeyCode key)          { return glfwGetKey(window, CAST(key, int)) == CAST(PressType::Release, int); }
+	
+	static bool MouseDown(GLFWwindow* window, MouseCode mouse)  { return glfwGetMouseButton(window, CAST(mouse, int)) == CAST(PressType::Down, int); }
+	static bool MouseUp(GLFWwindow* window, MouseCode mouse)    { return glfwGetMouseButton(window, CAST(mouse, int)) == CAST(PressType::Release, int); }
+	
 	struct InputPair
 	{
 		InputPair(const KeyCode& keyBtn, float value) : keyCode(keyBtn), mouseCode(), value(value){}

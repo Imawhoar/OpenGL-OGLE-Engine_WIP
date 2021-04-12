@@ -3,6 +3,16 @@
 
 #include "OGLE.h"
 using namespace OGLE;
+
+
+struct TestStruct
+{
+	int x = 1;
+	void DoSomtin()
+	{
+		std::cout << x << std::endl;
+	}
+};
 void EngineStuff()
 {
 	auto resourcePath = OGLE::FileHandler::GetResourcePath();
@@ -25,14 +35,17 @@ void EngineStuff()
 		Registry::AssetRegistry<Texture>::Get("default"),
 		Registry::AssetRegistry<Shader>::Get("default"));
 
+	PlayerObject player(&sprite);
+	
 	Renderer renderer(&cam);
-	renderer.AddRenderTarget(&sprite);
+	renderer.AddRenderTarget(&player);
 
 	
 	Input::InputManager inputManager;
 
 	Time time;
 	Cursor cursor;
+
 	
 	while (!application.WindowShouldClose())
 	{
@@ -43,6 +56,8 @@ void EngineStuff()
 		cursor.UpdateMouse(application.GetWindow());
 		inputManager.PollInput(application.GetWindow());
 
+		renderer.BeginActors();
+		renderer.TickActors(time.deltaTime);
 		renderer.Render();
 
 		glfwSwapBuffers(application.GetWindow());
@@ -53,6 +68,22 @@ void EngineStuff()
 
 }
 int main() {
-	EngineStuff();
+	//EngineStuff();
+
+
+	OGLE::Template::TCallback<> test;
+	TestStruct testStruct;
+	testStruct.x = 333;
+	TestStruct testStruct1;
+	testStruct1.x = 21;
+	TestStruct testStruct2;
+	testStruct2.x = 55;
+
+	test.Bind(testStruct, &TestStruct::DoSomtin);
+	test.Bind(testStruct1, &TestStruct::DoSomtin);
+	test.Bind(testStruct2, &TestStruct::DoSomtin);
+	
+
+	test.Invoke();
 	return 0;
 }

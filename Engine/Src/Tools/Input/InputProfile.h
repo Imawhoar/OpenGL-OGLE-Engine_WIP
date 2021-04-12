@@ -2,6 +2,8 @@
 #include "InputAction.h"
 namespace OGLE::Input
 {
+
+	
 	
 	class InputProfile
 	{

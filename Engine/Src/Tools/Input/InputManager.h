@@ -3,27 +3,35 @@
 #include <array>
 #include <unordered_map>
 #include <string>
-#include "../../OGLE.h"
 
 #include "InputProfile.h"
-
 
 namespace OGLE::Input
 {
 	typedef std::unordered_map<std::string, InputProfile> ProfileMap;
-	
-	class InputManager final 
+
+	class InputManager final
 	{
 	public:
-		InputProfile& GetProfile(const std::string& key)				       { return m_actionMaps[key]; }
+
+		InputProfile& GetProfile(const std::string& key) { return m_actionMaps[key]; }
+
+		template<typename TCaller>
+		void Bind(const std::string& actionName, TCaller* caller, void(TCaller::*func)(float value))
+		{
+			m_actionMaps["default"].GetAction(actionName).BindAction([&](float x)
+			{
+					(caller->*func)(x);
+			});
+		}
 		
-		void Create(const std::string& key)							   { m_actionMaps[key] = InputProfile(); }
+		void Create(const std::string& key) { m_actionMaps[key] = InputProfile(); }
 		void Insert(const std::string& key, const InputProfile& value) { m_actionMaps[key] = value; }
-		void Remove(const std::string& key)							   { m_actionMaps.erase(key); }
-		
+		void Remove(const std::string& key) { m_actionMaps.erase(key); }
+
 		void PollInput(GLFWwindow* window)
 		{
-			for (auto& actionMap: m_actionMaps)
+			for (auto& actionMap : m_actionMaps)
 			{
 				actionMap.second.Evaluate(window);
 			}

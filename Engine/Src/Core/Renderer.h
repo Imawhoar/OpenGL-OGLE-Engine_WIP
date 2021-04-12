@@ -2,8 +2,7 @@
 
 #include <vector>
 
-#include "Camera2D.h"
-#include "Sprite.h"
+#include "../Actors/ActorObject.h"
 #include "../Utils/Math.h"
 
 namespace OGLE
@@ -12,7 +11,7 @@ namespace OGLE
 
 	private:
 		Camera2D* m_activeCamera = nullptr;
-		std::vector<Sprite*> m_spriteList{};
+		std::vector<ActorObject*> m_spriteList{};
 	public:
 		Renderer() {
 			m_activeCamera = nullptr;
@@ -29,14 +28,29 @@ namespace OGLE
 			m_activeCamera = camera;
 		}
 
-		void RemoveRenderTarget(Sprite* sprite) {
-			m_spriteList.erase(std::remove(m_spriteList.begin(), m_spriteList.end(), sprite), m_spriteList.end());
+		void RemoveRenderTarget(ActorObject* actor) {
+			m_spriteList.erase(std::remove(m_spriteList.begin(), m_spriteList.end(), actor), m_spriteList.end());
 		}
-		void AddRenderTarget(Sprite* sprite) {
-			m_spriteList.push_back(sprite);
+		void AddRenderTarget(ActorObject* actor) {
+			m_spriteList.push_back(actor);
 
 		}
 
+		void BeginActors()
+		{
+			for (auto& actor : m_spriteList)
+			{
+				actor->BeginActor();
+			}
+		}
+		
+		void TickActors(float deltaTime)
+		{
+			for (auto& actor: m_spriteList)
+			{
+				actor->TickActor(deltaTime);
+			}
+		}
 		void Render() {
 
 			const auto viewMat = m_activeCamera->GetViewMatrix();
@@ -46,8 +60,8 @@ namespace OGLE
 
 			for (auto* target : m_spriteList)
 			{
-				target->GetShader()->Bind();
-				target->Bind();
+				target->m_sprite->GetShader()->Bind();
+				target->m_sprite->Bind();
 				Matrix4 modelMatrix(1);
 
 				modelMatrix = Math::Matrix::Translate(modelMatrix, target->GetTransform().GetPosition());
@@ -58,11 +72,11 @@ namespace OGLE
 
 				modelMatrix = Math::Matrix::Scale(modelMatrix, target->GetTransform().GetScale());
 
-				target->GetShader()->SetMat4("modelMatrix", modelMatrix);
-				target->GetShader()->SetMat4("viewMatrix", viewMat);
-				target->GetShader()->SetMat4("projectionMatrix", projMat);
+				target->m_sprite->GetShader()->SetMat4("modelMatrix", modelMatrix);
+				target->m_sprite->GetShader()->SetMat4("viewMatrix", viewMat);
+				target->m_sprite->GetShader()->SetMat4("projectionMatrix", projMat);
 
-				target->Draw();
+				target->m_sprite->Draw();
 			}
 
 		}

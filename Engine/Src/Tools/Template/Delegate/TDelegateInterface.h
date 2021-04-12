@@ -1,7 +1,7 @@
 #pragma once
 
 
-//TODO: start working on a more defined delegate/callback system
+//TODO: start working on a more refined delegate/callback system
 template <bool Const, typename Class, typename FuncType>
 struct TFunPtrType;
 

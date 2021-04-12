@@ -11,6 +11,8 @@
 #include "Core/Cursor.h"
 #include "Core/Point.h"
 
+#include "Actors/ActorObject.h"
+#include "Actors/PlayerObject.h"
 
 #include "Resources/Image.h"
 #include "Resources/Shader.h"
@@ -21,7 +23,7 @@
 #include "Tools/Input/InputManager.h"
 #include "Tools/Input/InputProfile.h"
 
-#include "Tools/Template/Delegate/TCallback.h"
+#include "Tools/Template/Delegate/TDelegate.h"
 #include "Tools/Template/TPureSingleton.h"
 #include "Tools/Template/TRegistry.h"
 

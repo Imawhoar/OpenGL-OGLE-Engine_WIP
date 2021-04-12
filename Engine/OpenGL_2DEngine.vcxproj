@@ -163,6 +163,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Actors\ActorObject.h" />
+    <ClInclude Include="Src\Actors\PlayerObject.h" />
     <ClInclude Include="Src\Core\Cursor.h" />
     <ClInclude Include="Src\Core\Point.h" />
     <ClInclude Include="Src\OGLE.h" />
@@ -172,7 +174,7 @@
     <ClInclude Include="Src\Utils\Math.h" />
     <ClInclude Include="Src\Utils\Color.h" />
     <ClInclude Include="Src\Resources\Resource.h" />
-    <ClInclude Include="Src\Tools\Template\Delegate\TCallback.h" />
+    <ClInclude Include="Src\Tools\Template\Delegate\TDelegate.h" />
     <ClInclude Include="Src\Tools\Input\InputCode.h" />
     <ClInclude Include="Src\Tools\Input\InputManager.h" />
     <ClInclude Include="Src\Resources\Image.h" />
