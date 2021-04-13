@@ -5,7 +5,8 @@ namespace OGLE
 	class PlayerObject : public ActorObject
 	{
 	public:
-		PlayerObject(Sprite* sprite) : ActorObject(sprite){ }
+		PlayerObject(Sprite* sprite) : ActorObject(sprite) { }
+	public:
 		void BeginActor() override
 		{
 			
@@ -15,14 +16,11 @@ namespace OGLE
 			
 		}
 
-		void InputSetup(Input::InputManager* manager) override
+		void InputSetupActor(Input::InputManager* manager) override
 		{
-			
-			manager->Bind("walkForward", this, &PlayerObject::test);
+			manager->Bind("walkForward", [&](float value){});
 		}
-		void test(float x)
-		{
-			
-		}
+	private:
+		
 	};
 }

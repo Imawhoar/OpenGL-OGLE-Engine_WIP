@@ -11,15 +11,15 @@ namespace OGLE
 
 	private:
 		Camera2D* m_activeCamera = nullptr;
-		std::vector<ActorObject*> m_spriteList{};
+		std::vector<ActorObject*> m_actorList{};
 	public:
 		Renderer() {
 			m_activeCamera = nullptr;
-			m_spriteList = {};
+			m_actorList = {};
 		}
 		explicit Renderer(Camera2D* camera) {
 			m_activeCamera = camera;
-			m_spriteList = {};
+			m_actorList = {};
 		}
 
 
@@ -29,16 +29,24 @@ namespace OGLE
 		}
 
 		void RemoveRenderTarget(ActorObject* actor) {
-			m_spriteList.erase(std::remove(m_spriteList.begin(), m_spriteList.end(), actor), m_spriteList.end());
+			m_actorList.erase(std::remove(m_actorList.begin(), m_actorList.end(), actor), m_actorList.end());
 		}
 		void AddRenderTarget(ActorObject* actor) {
-			m_spriteList.push_back(actor);
+			m_actorList.push_back(actor);
 
 		}
 
+
+		void InputSetupActor(Input::InputManager* manager)
+		{
+			for (auto& actor : m_actorList)
+			{
+				actor->InputSetupActor(manager);
+			}
+		}
 		void BeginActors()
 		{
-			for (auto& actor : m_spriteList)
+			for (auto& actor : m_actorList)
 			{
 				actor->BeginActor();
 			}
@@ -46,7 +54,7 @@ namespace OGLE
 		
 		void TickActors(float deltaTime)
 		{
-			for (auto& actor: m_spriteList)
+			for (auto& actor: m_actorList)
 			{
 				actor->TickActor(deltaTime);
 			}
@@ -58,7 +66,7 @@ namespace OGLE
 
 			//auto projMat = glm::perspective(50.0f, 16.0f/9, 0.01f, 100.0f);
 
-			for (auto* target : m_spriteList)
+			for (auto* target : m_actorList)
 			{
 				target->m_sprite->GetShader()->Bind();
 				target->m_sprite->Bind();
