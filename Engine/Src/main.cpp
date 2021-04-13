@@ -4,15 +4,6 @@
 #include "OGLE.h"
 using namespace OGLE;
 
-
-struct TestStruct
-{
-	int x = 1;
-	void DoSomtin()
-	{
-		std::cout << x << std::endl;
-	}
-};
 void EngineStuff()
 {
 	auto resourcePath = OGLE::FileHandler::GetResourcePath();
@@ -52,12 +43,16 @@ void EngineStuff()
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.50f, 0.5f, 0.6f, 1.0f);
 
-		time.UpdateTime();
-		cursor.UpdateMouse(application.GetWindow());
-		inputManager.PollInput(application.GetWindow());
-
+		renderer.InputSetupActor(&inputManager);
 		renderer.BeginActors();
 		renderer.TickActors(time.deltaTime);
+		
+		time.UpdateTime();
+		cursor.UpdateMouse(application.GetWindow());
+		inputManager.PollInputEvent(application.GetWindow());
+
+		
+		
 		renderer.Render();
 
 		glfwSwapBuffers(application.GetWindow());
@@ -67,23 +62,9 @@ void EngineStuff()
 	glfwTerminate();
 
 }
+
 int main() {
-	//EngineStuff();
+	EngineStuff();
 
-
-	OGLE::Template::TCallback<> test;
-	TestStruct testStruct;
-	testStruct.x = 333;
-	TestStruct testStruct1;
-	testStruct1.x = 21;
-	TestStruct testStruct2;
-	testStruct2.x = 55;
-
-	test.Bind(testStruct, &TestStruct::DoSomtin);
-	test.Bind(testStruct1, &TestStruct::DoSomtin);
-	test.Bind(testStruct2, &TestStruct::DoSomtin);
-	
-
-	test.Invoke();
 	return 0;
 }

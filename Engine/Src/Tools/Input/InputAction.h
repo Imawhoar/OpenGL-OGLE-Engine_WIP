@@ -10,7 +10,7 @@
 
 namespace OGLE::Input
 {
-	typedef std::function<void(float)> ActionCallBack;
+	//typedef OGLE::Template::TCallback<float> ActionCallBack;
 
 	static bool KeyDown(GLFWwindow* window, KeyCode key)        { return glfwGetKey(window, CAST(key, int)) == CAST(PressType::Down, int); }
 	static bool KeyUp(GLFWwindow* window, KeyCode key)          { return glfwGetKey(window, CAST(key, int)) == CAST(PressType::Release, int); }
@@ -27,11 +27,13 @@ namespace OGLE::Input
 		float value;
 	};
 
+
+	typedef Template::TCallback<float> CallbackContext;
+	
 	class InputAction
 	{
 	public:
 		InputAction(bool active = true) : m_inputType(), m_pressType(), m_isActive(active) {}
-
 	public:
 		void Evaluate(GLFWwindow* window)
 		{
@@ -54,18 +56,11 @@ namespace OGLE::Input
 			}
 			m_value = Math::Clamp(m_value, -m_maxValue, m_maxValue);
 		}
-		void InvokeEvents()
+		void Execute()
 		{
-			for (auto& invokeEvent : m_callbacks)
-			{
-				invokeEvent(m_value);
-			}
+			m_callbacks.Invoke(m_value);
 		}
-		void BindAction(const ActionCallBack& callback)
-		{
-			m_callbacks.push_back(callback);
-		}
-
+		
 		template<typename T>
 		void AddKeyEvent(const T code, float value)   { m_keyValuePair.push_back(InputPair(code, value)); }
 		template<typename T>
@@ -75,10 +70,10 @@ namespace OGLE::Input
 		void SetInputType(const InputType& inputType) { m_inputType = inputType; }
 
 		void SetActive(bool active)					  { m_isActive = active; }
-		void SetMaxValue(float value)				  { m_isActive = value; }
+		void SetMaxValue(float value)				  { m_maxValue = value; }
 
-		[[nodiscard]] auto& GetValuePairs() const { return m_keyValuePair; }
-		[[nodiscard]] auto& GetCallbacks() const { return m_callbacks; }
+		[[nodiscard]] auto& GetValuePairs()  { return m_keyValuePair; }
+		[[nodiscard]] auto& GetCallbacks()  { return m_callbacks; }
 
 		[[nodiscard]] auto& GetPressType() const { return m_pressType; }
 		[[nodiscard]] auto& GetInputType() const { return m_inputType; }
@@ -94,7 +89,7 @@ namespace OGLE::Input
 		float m_value = 0;
 		float m_maxValue = 1;
 
-		std::vector<ActionCallBack> m_callbacks{};
+		CallbackContext m_callbacks{};
 		std::vector<InputPair> m_keyValuePair{};
 	};
 }

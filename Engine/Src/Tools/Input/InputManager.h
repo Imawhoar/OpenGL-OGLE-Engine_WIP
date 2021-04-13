@@ -4,40 +4,50 @@
 #include <unordered_map>
 #include <string>
 
+#include "InputAction.h"
 #include "InputProfile.h"
 
 namespace OGLE::Input
 {
-	typedef std::unordered_map<std::string, InputProfile> ProfileMap;
+	typedef std::unordered_map<std::string, InputAction> InputActionMap;
 
 	class InputManager final
 	{
 	public:
 
-		InputProfile& GetProfile(const std::string& key) { return m_actionMaps[key]; }
-
+		/**
+		 * \brief IMPORTANT! Only use this method outside of the caller class!
+		 * TODO: Make this work like intended.
+		 */
 		template<typename TCaller>
-		void Bind(const std::string& actionName, TCaller* caller, void(TCaller::*func)(float value))
+		void Bind(const std::string& actionName, TCaller& caller, void(TCaller::*func)(float))
 		{
-			m_actionMaps["default"].GetAction(actionName).BindAction([&](float x)
+			m_actionMaps[actionName].GetCallbacks().Bind([&](float x)
 			{
-					(caller->*func)(x);
+				(caller.*func)(x);
 			});
 		}
-		
-		void Create(const std::string& key) { m_actionMaps[key] = InputProfile(); }
-		void Insert(const std::string& key, const InputProfile& value) { m_actionMaps[key] = value; }
-		void Remove(const std::string& key) { m_actionMaps.erase(key); }
+		void Bind(const std::string& actionName, const std::function<void(float)>& func)
+		{
+			m_actionMaps[actionName].GetCallbacks().Bind(func);
+		}
 
-		void PollInput(GLFWwindow* window)
+		template<typename TKey>
+		void AddKey(const std::string& actionName, const TKey& key, float value)
+		{
+			m_actionMaps[actionName].AddKeyEvent(key, value);
+		}
+	
+		void PollInputEvent(GLFWwindow* window)
 		{
 			for (auto& actionMap : m_actionMaps)
 			{
 				actionMap.second.Evaluate(window);
+				actionMap.second.Execute();
 			}
 		}
 	private:
-		ProfileMap m_actionMaps;
+		InputActionMap m_actionMaps;
 	};
 
 }

@@ -2,7 +2,7 @@
 #include <functional>
 #include <algorithm>
 
-#define OGLE_MAKE_DELEGATE(name, ret, ...) typedef OGLE::Template::TDelegate<ret, __VA_ARGS__> name
+#define OGLE_MAKE_DELEGATE(ret, ...) typedef OGLE::Template::TDelegate<ret, __VA_ARGS__>
 
 namespace OGLE::Template
 {
@@ -10,13 +10,13 @@ namespace OGLE::Template
 	class TDelegate final
 	{
 	private:
-		std::vector<std::function<TRet(TArgs...)>> m_events;
+	 	std::vector<std::function<TRet(TArgs...)>> m_events;
+	 
 
 	public:
-		TDelegate() = default;
-		virtual ~TDelegate() = default;
-		void operator=(TDelegate<TRet, TArgs...> rhs) = delete;
-		TDelegate(const TDelegate<TRet, TArgs...>&) = delete;
+	 	TDelegate() = default;
+	 	virtual ~TDelegate() = default;
+	 	TDelegate(const TDelegate<TRet, TArgs...>&) = delete;
 	public:
 
 		void Bind(std::function<TRet(TArgs...)> func)
