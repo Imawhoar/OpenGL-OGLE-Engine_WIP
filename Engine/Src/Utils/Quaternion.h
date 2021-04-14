@@ -38,6 +38,6 @@ namespace OGLE
 
 	private:
 		glm::quat m_quat;
-
+		friend class Transform;
 	};
 }

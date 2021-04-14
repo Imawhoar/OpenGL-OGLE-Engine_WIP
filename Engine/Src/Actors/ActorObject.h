@@ -17,10 +17,10 @@ namespace OGLE
 
 	
 	public:
-		ActorObject() : m_sprite(nullptr) {};
+		ActorObject() : m_sprite(nullptr) {}
 		ActorObject(Sprite* sprite) : m_sprite(sprite){}
 	public:
-		[[nodiscard]] const auto& GetTransform() const { return m_transform; }
+		[[nodiscard]] auto& GetTransform() { return m_transform; }
 
 		virtual void BeginActor() = 0;
 		virtual void TickActor(float deltaTime) = 0;

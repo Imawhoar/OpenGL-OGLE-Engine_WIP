@@ -2,8 +2,8 @@
 
 #include <vector>
 
+#include "Camera2D.h"
 #include "Actors/ActorObject.h"
-#include "Utils/Math.h"
 
 namespace OGLE
 {
@@ -64,22 +64,20 @@ namespace OGLE
 			const auto viewMat = m_activeCamera->GetViewMatrix();
 			const auto projMat = m_activeCamera->GetProjectionMatrix();
 
-			//auto projMat = glm::perspective(50.0f, 16.0f/9, 0.01f, 100.0f);
-
 			for (auto* target : m_actorList)
 			{
 				target->m_sprite->GetShader()->Bind();
 				target->m_sprite->Bind();
-				Matrix4 modelMatrix(1);
 
-				modelMatrix = Math::Translate(modelMatrix, target->GetTransform().GetPosition());
+				
+				Matrix4 modelMatrix;
 
-				modelMatrix = Math::Rotate(modelMatrix, target->GetTransform().GetRotation().x, Vector3(1, 0, 0));
-				modelMatrix = Math::Rotate(modelMatrix, target->GetTransform().GetRotation().y, Vector3(0, 1, 0));
-				modelMatrix = Math::Rotate(modelMatrix, target->GetTransform().GetRotation().y, Vector3(0, 0, 1));
+				auto translation = Math::Translate(Matrix4(1), target->GetTransform().GetPosition());
+				auto rotation = target->GetTransform().GetQuaternion().ToMat4();
+				auto scale = Math::Scale(Matrix4(1), target->GetTransform().GetScale());
 
-				modelMatrix = Math::Scale(modelMatrix, target->GetTransform().GetScale());
-
+				modelMatrix = translation * rotation * scale;
+				
 				target->m_sprite->GetShader()->SetMat4("modelMatrix", modelMatrix);
 				target->m_sprite->GetShader()->SetMat4("viewMatrix", viewMat);
 				target->m_sprite->GetShader()->SetMat4("projectionMatrix", projMat);
