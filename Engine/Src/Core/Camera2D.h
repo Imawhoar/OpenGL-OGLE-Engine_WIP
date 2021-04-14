@@ -1,7 +1,7 @@
 #pragma once
 #include "Transform.h"
-#include "../Utils/Matrix.h"
-#include "../Utils/Vector.h"
+#include "Utils/Matrix.h"
+#include "Utils/Vector.h"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/glm.hpp"
 

@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../Tools/Input/InputManager.h"
+#include "Tools/Input/InputManager.h"
 namespace OGLE
 {
 	class PlayerObject : public ActorObject

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "glad/glad.h"
-#include "../Utils/Matrix.h"
-#include "../Utils/Vector.h"
+#include "Utils/Matrix.h"
+#include "Utils/Vector.h"
 #include "Resource.h"
 #include "glm/glm.hpp"
 

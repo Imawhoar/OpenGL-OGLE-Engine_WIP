@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "../OGLE.h"
+#include "OGLE.h"
 
 namespace OGLE
 {
@@ -11,8 +11,7 @@ namespace OGLE
 
 		TagComponent() = default;
 		TagComponent(const TagComponent&) = default;
-		TagComponent(const std::string& tag)
-			: Tag(tag) {}
+		TagComponent(const std::string& tag) : Tag(tag) {}
 	};
 
 	struct TransformComponent

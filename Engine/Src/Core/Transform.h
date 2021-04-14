@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Utils/Vector.h"
+#include "Utils/Vector.h"
 namespace OGLE
 {
 	class Transform {

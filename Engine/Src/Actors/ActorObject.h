@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../Core/Sprite.h"
+#include "Core/Sprite.h"
 namespace OGLE
 {
 	namespace Input {

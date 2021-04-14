@@ -2,8 +2,8 @@
 #include <GLFW/glfw3.h>
 
 #include "InputCode.h"
-#include "../../Utils/Math.h"
-#include "../Template/Delegate/TDelegate.h"
+#include "Utils/Math.h"
+#include "Tools/Template/Delegate/TDelegate.h"
 
 //Put this in a designated class for macros
 #define CAST(value, type) static_cast<type>(value)
