@@ -1,9 +1,6 @@
 #pragma once
 #include <cmath>
-#include "glm/fwd.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-#include "Vector.h"
-#include "Matrix.h"
+
 namespace OGLE::Math
 {
 	template<typename T>
@@ -38,9 +35,9 @@ namespace OGLE::Math
 		min = Min(min, max);
 		max = Max(min, max);
 
-		float retVal = current / max;
+		const float retVal = current / max;
 
-		return Clamp(retVal, 0, 1);
+		return Clamp(retVal, 0.0f, 1.0f);
 	}
 
 	template<typename T>
@@ -57,7 +54,7 @@ namespace OGLE::Math
 	template<typename T>
 	inline T Pow(T value, T pow) { return std::pow(value, pow); }
 	template<typename T>
-	inline T Pow2(T value) { Pow(value, 2); }
+	inline T Pow2(T value) { return Pow(value, 2); }
 
 	
 	namespace Quaternion

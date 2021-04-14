@@ -10,17 +10,20 @@ namespace OGLE
 	class Scene
 	{
 	public:
-		Scene();
-		~Scene();
-
+		Scene() = default;
+		~Scene() = default;
+		
 		Entity CreateEntity(const std::string& name = std::string())
 		{
-			Entity entity = { m_Registry.create(), this };
+			/*Entity entity = { m_Registry.create(), this };
 			entity.AddComponent<TransformComponent>();
 			auto& tag = entity.AddComponent<TagComponent>();
 			tag.Tag = name.empty() ? "Entity" : name;
-			return entity;
+			return entity;*/
+			
+			return {};
 		}
+
 		void DestroyEntity(Entity entity)
 		{
 			m_Registry.destroy(entity);
@@ -33,4 +36,7 @@ namespace OGLE
 
 		friend class Entity;
 	};
+
+
+
 }

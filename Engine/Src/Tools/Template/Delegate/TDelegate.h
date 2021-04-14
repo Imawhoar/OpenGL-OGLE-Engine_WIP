@@ -1,8 +1,7 @@
 #pragma once
 #include <functional>
-#include <algorithm>
 
-#define OGLE_MAKE_DELEGATE(ret, ...) typedef OGLE::Template::TDelegate<ret, __VA_ARGS__>
+#define OGLE_DELEGATE(ret, ...) typedef OGLE::Template::TDelegate<ret, __VA_ARGS__>
 
 namespace OGLE::Template
 {
@@ -15,7 +14,7 @@ namespace OGLE::Template
 
 	public:
 	 	TDelegate() = default;
-	 	virtual ~TDelegate() = default;
+	 	~TDelegate() = default;
 	 	TDelegate(const TDelegate<TRet, TArgs...>&) = delete;
 	public:
 

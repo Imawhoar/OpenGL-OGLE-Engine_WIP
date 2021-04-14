@@ -1,5 +1,5 @@
 #pragma once
-#include "glm/matrix.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 namespace OGLE
 {
 	typedef glm::mat2 Matrix2;

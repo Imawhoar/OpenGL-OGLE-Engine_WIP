@@ -1,6 +1,5 @@
 #pragma once
 #include <memory>
-#include <iostream>
 namespace OGLE::Template {
 
     template < typename T >

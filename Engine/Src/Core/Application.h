@@ -23,12 +23,12 @@ namespace OGLE
 	private:
 		bool InitializeOpenGL() {
 			if (!glfwInit())
-				return 0;
+				return false;
 
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, m_versionMajor);
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, m_versionMinor);
 
-			m_window = glfwCreateWindow(m_screenWidth, m_screenHeight, m_windowName, NULL, NULL);
+			m_window = glfwCreateWindow(m_screenWidth, m_screenHeight, m_windowName, nullptr, nullptr);
 
 			if (!m_window) {
 				glfwTerminate();
@@ -57,13 +57,13 @@ namespace OGLE
 		Application(const char* name, int width, int height)
 			: m_windowName(name), m_screenWidth(width), m_screenHeight(height), m_versionMajor(4), m_versionMinor(4)
 		{
-			m_screenRatio = (float)m_screenWidth / m_screenHeight;
+			m_screenRatio = static_cast<float>(m_screenWidth) / m_screenHeight;
 			InitializeOpenGL();
 		}
 		Application(const char* name, int width, int height, int major, int minor)
 			: m_windowName(name), m_screenWidth(width), m_screenHeight(height), m_versionMajor(major), m_versionMinor(minor)
 		{
-			m_screenRatio = (float)m_screenWidth / m_screenHeight;
+			m_screenRatio = static_cast<float>(m_screenWidth) / m_screenHeight;
 			InitializeOpenGL();
 		}
 
@@ -73,7 +73,7 @@ namespace OGLE
 			glViewport(0, 0, width, height);
 		}
 
-		bool WindowShouldClose() const { return glfwWindowShouldClose(m_window); }
+		[[nodiscard]] auto WindowShouldClose() const { return glfwWindowShouldClose(m_window); }
 		[[nodiscard]] auto* GetWindow() const { return m_window; }
 	};
 

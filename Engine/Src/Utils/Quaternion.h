@@ -19,26 +19,22 @@ namespace OGLE
 
 		
 		[[nodiscard]] auto ToEuler() const { return eulerAngles(m_quat); }
-
+		
 		[[nodiscard]] auto ToMat4()  const { return mat4_cast(m_quat); }
 		[[nodiscard]] auto ToMat3()  const { return mat3_cast(m_quat); }
-
+		
 		[[nodiscard]] auto Yaw()     const { return yaw(m_quat); }
 		[[nodiscard]] auto Pitch()   const { return pitch(m_quat); }
 		[[nodiscard]] auto Roll()    const { return roll(m_quat); }
-
+		
 		[[nodiscard]] auto GetComponents() const { return Vector4(m_quat.x, m_quat.y, m_quat.z, m_quat.w); }
+		[[nodiscard]] auto& GetQuat() const   { return m_quat; }
 		
 		[[nodiscard]] auto GetX() const { return m_quat.x; }
 		[[nodiscard]] auto GetY() const { return m_quat.y; }
 		[[nodiscard]] auto GetZ() const { return m_quat.z; }
 		[[nodiscard]] auto GetW() const { return m_quat.w; }
 
-		bool operator==(const Quaternion& rhs) const { return this->m_quat == rhs.m_quat; }
-		bool operator!=(const Quaternion& rhs) const { return this->m_quat != rhs.m_quat; }
-		
-		void operator/=(const Quaternion& rhs)  {	    this->m_quat /= rhs.m_quat; }
-		void operator*=(const Quaternion& rhs)  {       this->m_quat *= rhs.m_quat; }
 
 	private:
 		glm::quat m_quat;

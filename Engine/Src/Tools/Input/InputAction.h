@@ -6,15 +6,16 @@
 #include "Tools/Template/Delegate/TDelegate.h"
 
 //Put this in a designated class for macros
-#define CAST(value, type) static_cast<type>(value)
+template<typename TType, typename TTVal>
+constexpr TType SCast(TTVal value) {return static_cast<TType>(value);}
 
 namespace OGLE::Input
 {
-	static bool KeyDown(GLFWwindow* window, KeyCode key) { return glfwGetKey(window, CAST(key, int)) == CAST(PressType::Down, int); }
-	static bool KeyUp(GLFWwindow* window, KeyCode key) { return glfwGetKey(window, CAST(key, int)) == CAST(PressType::Release, int); }
+	static bool KeyDown(GLFWwindow* window, KeyCode key) { return glfwGetKey(window, SCast<int>(key)) == SCast<int>(PressType::Down); }
+	static bool KeyUp(GLFWwindow* window, KeyCode key) { return glfwGetKey(window, SCast<int>(key)) == SCast<int>(PressType::Release); }
 
-	static bool MouseDown(GLFWwindow* window, MouseCode mouse) { return glfwGetMouseButton(window, CAST(mouse, int)) == CAST(PressType::Down, int); }
-	static bool MouseUp(GLFWwindow* window, MouseCode mouse) { return glfwGetMouseButton(window, CAST(mouse, int)) == CAST(PressType::Release, int); }
+	static bool MouseDown(GLFWwindow* window, MouseCode mouse) { return glfwGetMouseButton(window, SCast<int>(mouse)) == SCast<int>(PressType::Down); }
+	static bool MouseUp(GLFWwindow* window, MouseCode mouse) { return glfwGetMouseButton(window, SCast<int>(mouse)) == SCast<int>(PressType::Release); }
 
 	struct InputPair
 	{
@@ -22,15 +23,15 @@ namespace OGLE::Input
 		InputPair(const MouseCode& mouseBtn, float value) : keyCode(), mouseCode(mouseBtn), value(value) {}
 		KeyCode keyCode;
 		MouseCode mouseCode;
-		
-		void SetValue(float value) { this->value = value; }
-		auto GetValue() const { return value; }
+
+		auto SetValue(const float value) { this->value = value; }
+		[[nodiscard]] auto GetValue() const { return value; }
 	private:
 		float value;
 	};
 
 
-	OGLE_MAKE_DELEGATE(void, float) InputCallbackContext;
+	OGLE_DELEGATE(void, float) InputCallbackContext;
 
 	class InputAction
 	{

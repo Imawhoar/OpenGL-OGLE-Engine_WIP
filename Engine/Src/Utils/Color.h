@@ -9,6 +9,7 @@ namespace OGLE
 	public:
 		Color(float r, float g, float b, float a = 1.0f)
 		{
+			m_color = {};
 			m_color.x = Math::Clamp(r, 0.0f, 255.0f);
 			m_color.y = Math::Clamp(g, 0.0f, 255.0f);
 			m_color.z = Math::Clamp(b, 0.0f, 255.0f);
@@ -19,10 +20,10 @@ namespace OGLE
 		
 		void SetColor(float r, float g, float b, float a = 1.0f)
 		{
-			m_red = Math::Clamp(r, 0.0f, 255.0f);
-			m_green = Math::Clamp(g, 0.0f, 255.0f);
-			m_blue = Math::Clamp(b, 0.0f, 255.0f);
-			m_alpha = Math::Clamp(a, 0.0f, 1.0f);
+			m_color.x = Math::Clamp(r, 0.0f, 255.0f);
+			m_color.y = Math::Clamp(g, 0.0f, 255.0f);
+			m_color.z = Math::Clamp(b, 0.0f, 255.0f);
+			m_color.w = Math::Clamp(a, 0.0f, 1.0f);
 		}
 		
 		void SetRed(float value)   { m_color.x   = Math::Clamp(value, 0.0f, 255.0f); }

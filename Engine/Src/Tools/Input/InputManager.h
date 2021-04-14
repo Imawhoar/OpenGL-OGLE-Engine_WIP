@@ -5,7 +5,6 @@
 #include <string>
 
 #include "InputAction.h"
-#include "InputProfile.h"
 
 namespace OGLE::Input
 {

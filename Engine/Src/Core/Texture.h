@@ -1,6 +1,6 @@
 #pragma once
 #include "glad/glad.h"
-#include "../Resources/Image.h"
+#include "Resources/Image.h"
 
 #include <string>
 

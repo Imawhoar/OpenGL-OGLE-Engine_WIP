@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include "InputAction.h"
 namespace OGLE::Input
 {
 	

@@ -2,8 +2,8 @@
 
 #include <vector>
 
-#include "../Actors/ActorObject.h"
-#include "../Utils/Math.h"
+#include "Actors/ActorObject.h"
+#include "Utils/Math.h"
 
 namespace OGLE
 {
@@ -72,13 +72,13 @@ namespace OGLE
 				target->m_sprite->Bind();
 				Matrix4 modelMatrix(1);
 
-				modelMatrix = Math::Matrix::Translate(modelMatrix, target->GetTransform().GetPosition());
+				modelMatrix = Math::Translate(modelMatrix, target->GetTransform().GetPosition());
 
-				modelMatrix = Math::Matrix::Rotate(modelMatrix, target->GetTransform().GetRotation().x, Vector3(1, 0, 0));
-				modelMatrix = Math::Matrix::Rotate(modelMatrix, target->GetTransform().GetRotation().y, Vector3(0, 1, 0));
-				modelMatrix = Math::Matrix::Rotate(modelMatrix, target->GetTransform().GetRotation().y, Vector3(0, 0, 1));
+				modelMatrix = Math::Rotate(modelMatrix, target->GetTransform().GetRotation().x, Vector3(1, 0, 0));
+				modelMatrix = Math::Rotate(modelMatrix, target->GetTransform().GetRotation().y, Vector3(0, 1, 0));
+				modelMatrix = Math::Rotate(modelMatrix, target->GetTransform().GetRotation().y, Vector3(0, 0, 1));
 
-				modelMatrix = Math::Matrix::Scale(modelMatrix, target->GetTransform().GetScale());
+				modelMatrix = Math::Scale(modelMatrix, target->GetTransform().GetScale());
 
 				target->m_sprite->GetShader()->SetMat4("modelMatrix", modelMatrix);
 				target->m_sprite->GetShader()->SetMat4("viewMatrix", viewMat);

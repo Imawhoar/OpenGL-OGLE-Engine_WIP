@@ -33,24 +33,12 @@ namespace OGLE
 			m_data = stbi_load(src.c_str(), &m_width, &m_height, &m_nrChannels, 0);
 			return m_data;
 		}
-		
-		[[nodiscard]] bool IsValid() const {
-			if (m_data)
-				return true;
-			return false;
-		}
-		
-		[[nodiscard]] auto*GetData() const {
-			return m_data;
-		}
-		[[nodiscard]] auto GetWidth() const {
-			return m_width;
-		}
-		[[nodiscard]] auto GetHeight() const {
-			return m_height;
-		}
-		[[nodiscard]] auto GetNrChannels() const {
-			return m_nrChannels;
-		}
+
+		[[nodiscard]] bool IsValid() const { return m_data; }
+
+		[[nodiscard]] auto* GetData() const { return m_data; }
+		[[nodiscard]] auto GetWidth() const { return m_width; }
+		[[nodiscard]] auto GetHeight() const { return m_height; }
+		[[nodiscard]] auto GetNrChannels() const { return m_nrChannels; }
 	};
 }

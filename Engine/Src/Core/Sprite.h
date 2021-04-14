@@ -2,8 +2,7 @@
 
 #include <vector>
 #include "Texture.h"
-#include "Transform.h"
-#include "../Resources/Shader.h"
+#include "Resources/Shader.h"
 namespace OGLE
 {
 	class Sprite {
@@ -30,7 +29,7 @@ namespace OGLE
 				1, 2, 3  // second triangle
 		};
 	public:
-		Sprite(Texture* texture, Shader* shader) {
+		Sprite(Texture* texture, Shader* shader) : m_vbo(0), m_vao(0), m_ebo(0) {
 
 			if (texture)
 				m_textures.push_back(texture);
@@ -51,10 +50,10 @@ namespace OGLE
 			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ebo);
 			glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * m_indicies.size(), &m_indicies[0], GL_STATIC_DRAW);
 
-			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), static_cast<void*>(nullptr));
 			glEnableVertexAttribArray(0);
 
-			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), reinterpret_cast<void*>(3 * sizeof(float)));
 			glEnableVertexAttribArray(1);
 
 			glBindVertexArray(0);
@@ -89,7 +88,7 @@ namespace OGLE
 			glBindVertexArray(m_vao);
 		}
 		void Draw() {
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 		}
 
 	};

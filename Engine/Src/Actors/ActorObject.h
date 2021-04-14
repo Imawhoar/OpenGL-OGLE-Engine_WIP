@@ -17,7 +17,7 @@ namespace OGLE
 
 	
 	public:
-		ActorObject() = default;
+		ActorObject() : m_sprite(nullptr) {};
 		ActorObject(Sprite* sprite) : m_sprite(sprite){}
 	public:
 		[[nodiscard]] const auto& GetTransform() const { return m_transform; }
