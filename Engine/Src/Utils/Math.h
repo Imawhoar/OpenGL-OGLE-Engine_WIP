@@ -59,78 +59,10 @@ namespace OGLE::Math
 	template<typename T>
 	inline T Pow2(T value) { Pow(value, 2); }
 
-	namespace Vector {
-
-		template<int L, typename R, glm::qualifier Q>
-		float Distance(
-			const glm::vec<L, R, Q>& lhs,
-			const glm::vec<L, R, Q>& rhs)
-		{
-			return glm::distance(lhs, rhs);
-		}
-
-		template<int L, typename T, glm::qualifier Q>
-		float Dot(
-			const glm::vec<L, T, Q>& lhs,
-			const glm::vec<L, T, Q>& rhs)
-		{
-			return glm::dot(lhs, rhs);
-		}
-		template<int L, typename T, glm::qualifier Q>
-		float Cross(
-			const glm::vec<L, T, Q>& lhs,
-			const glm::vec<L, T, Q>& rhs)
-		{
-			return glm::cross(lhs, rhs);
-		}
-		template<int L, typename T, glm::qualifier Q>
-		float Normalize(
-			const glm::vec<L, T, Q>& lhs,
-			const glm::vec<L, T, Q>& rhs)
-		{
-			return glm::normalize(lhs, rhs);
-		}
-		template<int L, typename T, glm::qualifier Q>
-		float Reflect(
-			const glm::vec<L, T, Q>& lhs,
-			const glm::vec<L, T, Q>& rhs)
-		{
-			return glm::reflect(lhs, rhs);
-		}
-
-
-	}
-	namespace Matrix
+	
+	namespace Quaternion
 	{
-		template<typename T>
-		auto Perspective(T fov, T aspect, T near, T far)
-		{
-			return glm::perspective(fov, aspect, near, far);
-		}
-
-		template<int VL, int C, int R, typename T, glm::qualifier Q>
-		auto Translate(const glm::mat<C, R, T, Q>& model, const glm::vec<VL, T, Q>& delta)
-		{
-			return glm::translate(model, delta);
-		}
-
-		template<int VL, int C, int R, typename T, glm::qualifier Q>
-		auto Scale(const glm::mat<C, R, T, Q>& model, const glm::vec<VL, T, Q>& delta)
-		{
-			return glm::scale(model, delta);
-		}
-
-		template<int VL, int C, int R, typename T, glm::qualifier Q>
-		auto Rotate(const glm::mat<C, R, T, Q>& model, T angle, const glm::vec<VL, T, Q>& delta)
-		{
-			return glm::rotate(model, angle, delta);
-		}
-
-		template<int L, typename T, glm::qualifier Q>
-		auto LookAt(const glm::vec<L, T, Q>& eye, const glm::vec<L, T, Q>& center, const glm::vec<L, T, Q>& up)
-		{
-			return glm::lookAt(eye, center, up);
-		}
-
+		
 	}
+	
 }

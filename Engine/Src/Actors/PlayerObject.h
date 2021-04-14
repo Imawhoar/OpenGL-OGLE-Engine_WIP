@@ -19,8 +19,10 @@ namespace OGLE
 		void InputSetupActor(Input::InputManager* manager) override
 		{
 			manager->Bind("walkForward", [&](float value){});
+			manager->Bind("walkRightward", [&](float value){});
 		}
 	private:
+		float m_moveSpeed;
 		
 	};
 }

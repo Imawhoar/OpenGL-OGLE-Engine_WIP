@@ -20,24 +20,13 @@ namespace OGLE::Input
 		 * TODO: Make this work like intended.
 		 */
 		template<typename TCaller>
-		void Bind(const std::string& actionName, TCaller& caller, void(TCaller::*func)(float))
-		{
-			m_actionMaps[actionName].GetCallbacks().Bind([&](float x)
-			{
-				(caller.*func)(x);
-			});
-		}
-		void Bind(const std::string& actionName, const std::function<void(float)>& func)
-		{
-			m_actionMaps[actionName].GetCallbacks().Bind(func);
-		}
+		void Bind(const std::string& actionName, TCaller& caller, void(TCaller::* func)(float)) { m_actionMaps[actionName].GetCallbacks().Bind([&](float x) {(caller.*func)(x); }); }
+		void Bind(const std::string& actionName, const std::function<void(float)>& func) { m_actionMaps[actionName].GetCallbacks().Bind(func); }
 
 		template<typename TKey>
-		void AddKey(const std::string& actionName, const TKey& key, float value)
-		{
-			m_actionMaps[actionName].AddKeyEvent(key, value);
-		}
-	
+		void AddKey(const std::string& actionName, const TKey& key, float value) { m_actionMaps[actionName].AddKeyEvent(key, value); }
+		void AddKey(const std::string& actionName, const InputPair& pair) { m_actionMaps[actionName].AddKeyEvent(pair); }
+		
 		void PollInputEvent(GLFWwindow* window)
 		{
 			for (auto& actionMap : m_actionMaps)

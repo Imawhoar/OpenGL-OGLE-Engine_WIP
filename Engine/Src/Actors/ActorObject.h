@@ -13,7 +13,6 @@ namespace OGLE
 	protected:
 		Sprite* m_sprite;
 		Transform m_transform;
-
 		virtual ~ActorObject() = default;
 
 	
@@ -25,6 +24,6 @@ namespace OGLE
 
 		virtual void BeginActor() = 0;
 		virtual void TickActor(float deltaTime) = 0;
-		virtual void InputSetup(OGLE::Input::InputManager* manager) = 0;
+		virtual void InputSetupActor(OGLE::Input::InputManager* manager) = 0;
 	};
 }

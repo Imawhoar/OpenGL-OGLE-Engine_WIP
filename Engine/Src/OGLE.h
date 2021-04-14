@@ -31,3 +31,4 @@
 #include "Utils/Math.h"
 #include "Utils/Matrix.h"
 #include "Utils/Vector.h"
+#include "Utils/Quaternion.h"

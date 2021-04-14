@@ -41,6 +41,7 @@ namespace OGLE
 			m_rotation += deltaRot;
 		}
 
+		
 		[[nodiscard]] auto GetForwardVector() const {
 			return Vector3(0, 0, 1);
 		}
