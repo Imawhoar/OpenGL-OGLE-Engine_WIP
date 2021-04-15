@@ -1,41 +1,69 @@
 #pragma once
 #include "GLFW/glfw3.h"
-#include <array>
-#include <unordered_map>
 #include <string>
-
 #include "InputAction.h"
+#include "Debug/Logger.h"
 
 namespace OGLE::Input
 {
-	typedef std::unordered_map<std::string, InputAction> InputActionMap;
-
 	class InputManager final
 	{
 	public:
+		InputManager()
+		{
+			m_actionMaps = {};
+			ENGINE_LOG_INFO("INITIALIZED INPUT-MANAGER...");
+		}
+		InputManager* CreateAction(const std::string& name)
+		{
+			//Probably a better way of doing this
+			for (const auto& action : m_actionMaps) {
+				if (action.GetName() == name)
+					return this;
+			}
+			m_actionMaps.emplace_back(name);
+			return this;
+		}
+		[[nodiscard]] InputAction* GetAction(const std::string& name, bool createIfnFnd = false)
+		{
+			for (auto& action : m_actionMaps) {
+				if (action.GetName() == name)
+					return &action;
+			}
+			if (createIfnFnd)
+			{
+				ENGINE_LOG_ERROR("COULD NOT FIND ACTION: \"{0}\"!", name.c_str());
+				ENGINE_LOG_INFO("CREATING \"{0}\"...", name.c_str());
+				CreateAction(name);
+				return GetAction(name);
+			}
+
+			ENGINE_LOG_ERROR("COULD NOT FIND ACTION: \"{0}\"!", name.c_str());
+			return nullptr;
+		}
 
 		/**
 		 * \brief IMPORTANT! Only use this method outside of the caller class!
 		 * TODO: Make this work like intended.
 		 */
 		template<typename TCaller>
-		void Bind(const std::string& actionName, TCaller& caller, void(TCaller::* func)(float)) { m_actionMaps[actionName].GetCallbacks().Bind([&](float x) {(caller.*func)(x); }); }
-		void Bind(const std::string& actionName, const std::function<void(float)>& func) { m_actionMaps[actionName].GetCallbacks().Bind(func); }
+		void Bind(const std::string& name, TCaller& caller, void(TCaller::* func)(float)) { GetAction(name)->GetCallbacks().Bind([&](float x) {(caller.*func)(x); }); }
+		void Bind(const std::string& name, const std::function<void(float)>& func) { GetAction(name)->GetCallbacks().Bind(func); }
 
 		template<typename TKey>
-		void AddKey(const std::string& actionName, const TKey& key, float value) { m_actionMaps[actionName].AddKeyEvent(key, value); }
-		void AddKey(const std::string& actionName, const InputPair& pair) { m_actionMaps[actionName].AddKeyEvent(pair); }
-		
+		void AddKey(const std::string& name, const TKey& key, float value) { GetAction(name)->AddKeyEvent(key, value); }
+		void AddKey(const std::string& name, const InputPair& pair) { GetAction(name)->AddKeyEvent(pair); }
+
 		void PollInputEvent(GLFWwindow* window)
 		{
 			for (auto& actionMap : m_actionMaps)
 			{
-				actionMap.second.Evaluate(window);
-				actionMap.second.Execute();
+				actionMap.Evaluate(window);
+				actionMap.Execute();
 			}
 		}
 	private:
-		InputActionMap m_actionMaps;
+		std::vector<InputAction> m_actionMaps;
 	};
 
 }

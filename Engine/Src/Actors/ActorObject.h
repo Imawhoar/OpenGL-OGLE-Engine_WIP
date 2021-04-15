@@ -1,10 +1,10 @@
 ﻿#pragma once
 #include "Core/Sprite.h"
+#include "Tools/Input/InputManager.h"
+
 namespace OGLE
 {
-	namespace Input {
-		class InputManager;
-	}
+
 
 	class ActorObject
 	{

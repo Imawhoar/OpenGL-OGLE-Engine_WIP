@@ -27,8 +27,8 @@ namespace OGLE
 	private:
 		void RecalculateView() {
 			m_viewMatrix = glm::lookAt(m_transform.GetPosition(),
-				m_transform.GetPosition() - m_transform.GetForwardVector(),
-				m_transform.GetUpVector());
+				m_transform.GetPosition() - m_transform.GetFront(),
+				m_transform.GetUp());
 		}
 		void RecalculateProjection() {
 			m_projectionMatrix = glm::ortho(
@@ -40,15 +40,15 @@ namespace OGLE
 		}
 
 	public:
-		Camera2D(float left, float right, float bottom, float top, float near, float far) {
+		Camera2D(float left, float right, float bottom, float top, float nearClip, float farClip) {
 
-			m_transform.SetPosition(glm::vec3(0, 0, 10));
-			m_transform.SetRotation(glm::vec3(0, 0, 0));
+			m_transform.SetPosition(Vector3(0, 0, 10));
+			m_transform.SetRotation(Vector3(0, 0, 0));
 
 			m_size = 5;
 
 			m_aspectRatio = 16.0f / 9.0f;
-			SetClipInterval(near, far);
+			SetClipInterval(nearClip, farClip);
 
 			m_left = left;
 			m_right = right;
@@ -58,10 +58,10 @@ namespace OGLE
 			RecalculateProjection();
 			RecalculateView();
 		}
-		Camera2D(float near, float far) {
+		Camera2D(float nearClip, float farClip) {
 
-			m_transform.SetPosition(glm::vec3(0, 0, 10));
-			m_transform.SetRotation(glm::vec3(0, 0, 0));
+			m_transform.SetPosition(Vector3(0, 0, 10));
+			m_transform.SetRotation(Vector3(0, 0, 0));
 
 			m_size = 5;
 
@@ -72,20 +72,20 @@ namespace OGLE
 			m_bottom = -1;
 			m_top = 1;
 
-			SetClipInterval(near, far);
+			SetClipInterval(nearClip, farClip);
 			m_projectionMatrix = glm::ortho(
 				m_left * m_size * m_aspectRatio,
 				m_right * m_size * m_aspectRatio,
 				m_bottom * m_size,
 				m_top * m_size,
-				near, far);
+				nearClip, farClip);
 
 			RecalculateView();
 		}
 		Camera2D() {
 
-			m_transform.SetPosition(glm::vec3(0, 0, 10));
-			m_transform.SetRotation(glm::vec3(0, 0, 0));
+			m_transform.SetPosition(Vector3(0, 0, 10));
+			m_transform.SetRotation(Vector3(0, 0, 0));
 
 			m_size = 5;
 
@@ -134,9 +134,9 @@ namespace OGLE
 			m_top = top;
 			RecalculateProjection();
 		}
-		void SetClipInterval(float near, float far) {
-			m_nearClip = near;
-			m_farClip = far;
+		void SetClipInterval(float nearClip, float farClip) {
+			m_nearClip = nearClip;
+			m_farClip = farClip;
 		}
 
 		void SetSize(float size) {

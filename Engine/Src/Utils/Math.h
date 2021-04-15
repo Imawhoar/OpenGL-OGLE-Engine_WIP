@@ -28,7 +28,17 @@ namespace OGLE::Math
 			return min;
 		return current;
 	}
-
+	template<typename T>
+	inline T ClampRepeat(T current, T min, T max)
+	{
+		min = Min(min, max);
+		max = Max(min, max);
+		if (current < min)
+			return current = max - current;
+		if (current > max)
+			return current = min + current;
+		return current;
+	}
 	template<typename T>
 	inline T Percent(T current, T min, T max)
 	{

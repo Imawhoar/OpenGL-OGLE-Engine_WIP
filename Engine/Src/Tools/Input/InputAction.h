@@ -7,7 +7,7 @@
 
 //Put this in a designated class for macros
 template<typename TType, typename TTVal>
-constexpr TType SCast(TTVal value) {return static_cast<TType>(value);}
+constexpr TType SCast(TTVal value) { return static_cast<TType>(value); }
 
 namespace OGLE::Input
 {
@@ -35,8 +35,8 @@ namespace OGLE::Input
 
 	class InputAction
 	{
-	public:
-		InputAction(bool active = true) : m_inputType(), m_pressType(), m_isActive(active) {}
+	
+
 	public:
 		void Evaluate(GLFWwindow* window)
 		{
@@ -65,22 +65,30 @@ namespace OGLE::Input
 
 		template<typename T>
 		void AddKeyEvent(const T code, float value) { m_keyValuePair.push_back(InputPair(code, value)); }
-		void AddKeyEvent(const InputPair& keyPair)  { m_keyValuePair.push_back(keyPair); }
+		void AddKeyEvent(const InputPair& keyPair) { m_keyValuePair.push_back(keyPair); }
 
 		void SetPressType(const PressType& pressType) { m_pressType = pressType; }
 		void SetInputType(const InputType& inputType) { m_inputType = inputType; }
 
-		void SetActive  (bool active) { m_isActive = active; }
-		void SetMaxValue(float value) { m_maxValue = value;  }
+		void SetActive(bool active) { m_isActive = active; }
+		void SetMaxValue(float value) { m_maxValue = value; }
 
+		void SetName(const std::string& name) { m_name = name; }
+
+
+		[[nodiscard]] auto& GetName() const  { return m_name; }
 		[[nodiscard]] auto& GetValuePairs()  { return m_keyValuePair; }
-		[[nodiscard]] auto& GetCallbacks() { return m_callbacks;    }
+		[[nodiscard]] auto& GetCallbacks()  { return m_callbacks; }
 
-		[[nodiscard]] auto& GetPressType() const { return m_pressType; }
-		[[nodiscard]] auto& GetInputType() const { return m_inputType; }
+		[[nodiscard]] auto& GetPressType()  { return m_pressType; }
+		[[nodiscard]] auto& GetInputType()  { return m_inputType; }
 
 		[[nodiscard]] auto GetActive() const { return m_isActive; }
 		[[nodiscard]] auto GetValue() const { return m_value; }
+	
+	public:
+		InputAction(const InputAction& action) : m_inputType(), m_pressType(), m_isActive(true) { m_name = action.GetName(); };
+		InputAction(const std::string name, bool active = true) : m_name(name), m_inputType(), m_pressType(), m_isActive(active) {}
 	private:
 
 		InputType m_inputType;
@@ -90,7 +98,11 @@ namespace OGLE::Input
 		float m_value = 0;
 		float m_maxValue = 1;
 
+		std::string m_name;
+
 		InputCallbackContext m_callbacks{};
 		std::vector<InputPair> m_keyValuePair{};
 	};
+
+
 }

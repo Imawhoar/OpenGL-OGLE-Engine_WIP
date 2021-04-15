@@ -72,9 +72,9 @@ namespace OGLE
 				
 				Matrix4 modelMatrix;
 
-				auto translation = Math::Translate(Matrix4(1), target->GetTransform().GetPosition());
+				auto translation = Matrix::Translate(Matrix4(1), target->GetTransform().GetPosition());
 				auto rotation = target->GetTransform().GetQuaternion().ToMat4();
-				auto scale = Math::Scale(Matrix4(1), target->GetTransform().GetScale());
+				auto scale = Matrix::Scale(Matrix4(1), target->GetTransform().GetScale());
 
 				modelMatrix = translation * rotation * scale;
 				

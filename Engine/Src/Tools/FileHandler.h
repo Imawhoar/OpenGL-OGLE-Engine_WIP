@@ -18,7 +18,7 @@ namespace OGLE::FileHandler {
 	}
 
 	/// Tries to get the path to file recursively. 
-	inline std::string FindFile(const PathDirectory& entryDir, const char* fileName) {
+	inline std::string GetFilePath(const PathDirectory& entryDir, const char* fileName) {
 
 		if (!std::filesystem::exists(entryDir) || !std::filesystem::is_directory(entryDir))
 			return "";
@@ -28,7 +28,7 @@ namespace OGLE::FileHandler {
 
 			if (std::filesystem::is_directory(currentPath.path()))
 			{
-				PathDirectory path = FindFile(currentPath.path(), fileName);
+				PathDirectory path = GetFilePath(currentPath.path(), fileName);
 
 				if (path.empty())
 					continue;
@@ -44,8 +44,8 @@ namespace OGLE::FileHandler {
 		return "";
 	}
 
-	inline std::string FindFile(const char* fileName) { return FindFile(GetSolutionPath(), fileName); }
-	inline std::string FindResource(const char* fileName) { return FindFile(GetResourcePath(), fileName); }
+	inline std::string GetFilePath(const char* fileName) { return GetFilePath(GetSolutionPath(), fileName); }
+	inline std::string GetResourcePath(const char* fileName) { return GetFilePath(GetResourcePath(), fileName); }
 
 
 	inline void RenameFile(const PathDirectory& filePath, const char* newName) {

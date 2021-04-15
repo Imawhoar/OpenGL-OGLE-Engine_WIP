@@ -127,7 +127,7 @@ namespace OGLE
 		void SetVec2(const std::string& name, const Vector2& value) const				{ glUniform2fv(glGetUniformLocation(m_shaderID, name.c_str()), 1, glm::value_ptr(value)); }
 		
 		void SetVec2(const std::string& name, float x, float y) const					{ glUniform2f(glGetUniformLocation(m_shaderID, name.c_str()), x, y); }
-		void SetVec3(const std::string& name, const Vector3& value) const				{ glUniform3fv(glGetUniformLocation(m_shaderID, name.c_str()), 1, glm::value_ptr(value)); }
+		void SetVec3(const std::string& name, const Vector3& value) const			    { glUniform3fv(glGetUniformLocation(m_shaderID, name.c_str()), 1, glm::value_ptr(value)); }
 		
 		void SetVec3(const std::string& name, float x, float y, float z) const			{ glUniform3f(glGetUniformLocation(m_shaderID, name.c_str()), x, y, z); }
 		void SetVec4(const std::string& name, const Vector4& value) const				{ glUniform4fv(glGetUniformLocation(m_shaderID, name.c_str()), 1, glm::value_ptr(value)); }

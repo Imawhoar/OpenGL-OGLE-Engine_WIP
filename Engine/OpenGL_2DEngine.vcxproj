@@ -96,7 +96,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Dependencies\glad\include;$(SolutionDir)Engine\Dependencies\glfw\include;$(SolutionDir)Engine\Dependencies\glm\include;$(SolutionDir)Engine\Dependencies\stb\include;$(SolutionDir)Engine\Dependencies\entt\include;Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Dependencies\glad\include;$(SolutionDir)Engine\Dependencies\glfw\include;$(SolutionDir)Engine\Dependencies\glm\include;$(SolutionDir)Engine\Dependencies\stb\include;$(SolutionDir)Engine\Dependencies\spdlog\include;$(SolutionDir)Engine\Dependencies\entt\include;Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -114,7 +114,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Dependencies\glad\include;$(SolutionDir)Engine\Dependencies\glfw\include;$(SolutionDir)Engine\Dependencies\glm\include;$(SolutionDir)Engine\Dependencies\stb\include;$(SolutionDir)Engine\Dependencies\entt\include;Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Dependencies\glad\include;$(SolutionDir)Engine\Dependencies\glfw\include;$(SolutionDir)Engine\Dependencies\glm\include;$(SolutionDir)Engine\Dependencies\stb\include;$(SolutionDir)Engine\Dependencies\spdlog\include;$(SolutionDir)Engine\Dependencies\entt\include;Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -132,14 +132,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Dependencies\glad\include;$(SolutionDir)Engine\Dependencies\glfw\include;$(SolutionDir)Engine\Dependencies\glm\include;$(SolutionDir)Engine\Dependencies\stb\include;$(SolutionDir)Engine\Dependencies\entt\include;Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Dependencies\glad\include;$(SolutionDir)Engine\Dependencies\glfw\include;$(SolutionDir)Engine\Dependencies\glm\include;$(SolutionDir)Engine\Dependencies\stb\include;$(SolutionDir)Engine\Dependencies\spdlog\include;$(SolutionDir)Engine\Dependencies\entt\include;Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Dependencies\glfw\lib;$(SolutionDir)Engine\Dependencies\glad\lib\Debug;$(SolutionDir)Engine\Dependencies\glad\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;glad.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Engine\Dependencies\glfw\lib;$(SolutionDir)Engine\Dependencies\glad\lib\Debug;$(SolutionDir)Engine\Dependencies\glad\lib\Release;$(SolutionDir)Engine\Dependencies\spdlog\lib\Debug;$(SolutionDir)Engine\Dependencies\spdlog\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;glad.lib;spdlog.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -150,7 +150,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Dependencies\glad\include;$(SolutionDir)Engine\Dependencies\glfw\include;$(SolutionDir)Engine\Dependencies\glm\include;$(SolutionDir)Engine\Dependencies\stb\include;$(SolutionDir)Engine\Dependencies\entt\include;Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Dependencies\glad\include;$(SolutionDir)Engine\Dependencies\glfw\include;$(SolutionDir)Engine\Dependencies\glm\include;$(SolutionDir)Engine\Dependencies\stb\include;$(SolutionDir)Engine\Dependencies\spdlog\include;$(SolutionDir)Engine\Dependencies\entt\include;Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -168,6 +168,7 @@
     <ClInclude Include="Src\Actors\PlayerObject.h" />
     <ClInclude Include="Src\Core\Cursor.h" />
     <ClInclude Include="Src\Core\Point.h" />
+    <ClInclude Include="Src\Debug\Logger.h" />
     <ClInclude Include="Src\OGLE.h" />
     <ClInclude Include="Src\Scene\Components.h" />
     <ClInclude Include="Src\Scene\Entity.h" />
@@ -198,6 +199,7 @@
     <ClInclude Include="Src\Utils\Vector.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Debug\Logger.cpp" />
     <ClCompile Include="Src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
