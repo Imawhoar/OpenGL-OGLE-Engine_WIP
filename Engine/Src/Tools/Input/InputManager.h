@@ -2,7 +2,7 @@
 #include "GLFW/glfw3.h"
 #include <string>
 #include "InputAction.h"
-#include "Debug/Logger.h"
+
 
 namespace OGLE::Input
 {
@@ -12,7 +12,7 @@ namespace OGLE::Input
 		InputManager()
 		{
 			m_actionMaps = {};
-			ENGINE_LOG_INFO("INITIALIZED INPUT-MANAGER...");
+			std::cout << ("INITIALIZED INPUT-MANAGER...");
 		}
 		InputManager* CreateAction(const std::string& name)
 		{
@@ -32,13 +32,13 @@ namespace OGLE::Input
 			}
 			if (createIfnFnd)
 			{
-				ENGINE_LOG_ERROR("COULD NOT FIND ACTION: \"{0}\"!", name.c_str());
-				ENGINE_LOG_INFO("CREATING \"{0}\"...", name.c_str());
+				std::cout << ("COULD NOT FIND ACTION: \"{0}\"!", name.c_str());
+				std::cout << ("CREATING \"{0}\"...", name.c_str());
 				CreateAction(name);
 				return GetAction(name);
 			}
 
-			ENGINE_LOG_ERROR("COULD NOT FIND ACTION: \"{0}\"!", name.c_str());
+			std::cout << ("COULD NOT FIND ACTION: \"{0}\"!", name.c_str());
 			return nullptr;
 		}
 

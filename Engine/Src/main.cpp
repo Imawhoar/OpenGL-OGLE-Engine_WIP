@@ -6,7 +6,6 @@ using namespace OGLE;
 
 void EngineStuff()
 {
-	Log::Init();
 
 	auto squarePath = OGLE::FileHandler::GetResourcePath("square.png");
 	auto vertexShaderPath = OGLE::FileHandler::GetResourcePath("vertexShader.shader");

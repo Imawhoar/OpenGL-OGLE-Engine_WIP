@@ -2,7 +2,6 @@
 
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
-#include "Debug/Logger.h"
 #include <iostream>
 
 namespace OGLE
@@ -23,10 +22,10 @@ namespace OGLE
 	private:
 		bool InitializeOpenGL() {
 			if (!glfwInit()) {
-				ENGINE_LOG_CRITICAL("FAILED TO INITIALIZE GLFW!");
+				std::cout<< "FAILED TO INITIALIZE GLFW!";
 				return false;
 			}
-			ENGINE_LOG_INFO("INITIALIZED OPENGL...");
+			std::cout << ("INITIALIZED OPENGL...");
 
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, m_versionMajor);
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, m_versionMinor);
@@ -34,11 +33,11 @@ namespace OGLE
 			m_window = glfwCreateWindow(m_screenWidth, m_screenHeight, m_windowName, nullptr, nullptr);
 
 			if (!m_window) {
-				ENGINE_LOG_CRITICAL("FAILED TO INITIALIZE WINDOW!");
+				std::cout << ("FAILED TO INITIALIZE WINDOW!");
 				glfwTerminate();
 				return false;
 			}
-			ENGINE_LOG_INFO("INITIALIZED WINDOW...");
+			std::cout << ("INITIALIZED WINDOW...");
 
 			glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow* window, int width, int height)
 				{
@@ -47,15 +46,15 @@ namespace OGLE
 
 			glfwMakeContextCurrent(m_window);
 			if (!gladLoadGL()) {
-				ENGINE_LOG_CRITICAL("FAILED TO INITIALIZE OPENGL!");
+				std::cout << ("FAILED TO INITIALIZE OPENGL!");
 				return false;
 			}
-			ENGINE_LOG_INFO("INITIALIZED OPENGL...");
+			std::cout << ("INITIALIZED OPENGL...");
 
 			glEnable(GL_BLEND);
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 			
-			ENGINE_LOG_INFO("INITIALIZED APPLICATION...");
+			std::cout << ("INITIALIZED APPLICATION...");
 			return true;
 		}
 

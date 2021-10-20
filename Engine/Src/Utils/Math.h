@@ -5,6 +5,7 @@ namespace OGLE::Math
 {
 	template<typename T>
 	inline T Max(T lhs, T rhs) { return lhs > rhs ? lhs : rhs; }
+	
 	template<typename T>
 	inline T Min(T lhs, T rhs) { return lhs < rhs ? lhs : rhs; }
 

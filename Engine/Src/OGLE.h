@@ -33,4 +33,3 @@
 #include "Utils/Vector.h"
 #include "Utils/Quaternion.h"
 
-#include "Debug/Logger.h"
