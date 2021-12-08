@@ -2,31 +2,32 @@
 #include <filesystem>
 #include <iostream>
 
-typedef std::filesystem::path PathDirectory;
+using PathDirectory = std::filesystem::path;
 
-namespace OGLE::FileHandler {
-	
-	inline std::string GetSolutionPath() {
+namespace OGLE::FileHandler
+{
+	inline std::string GetSolutionPath()
+	{
 		auto temp = std::filesystem::current_path().generic_string();
 		return temp;
 	}
 
-	inline std::string GetResourcePath() {
+	inline std::string GetResourcePath()
+	{
 		auto temp = std::filesystem::current_path();
 		temp.append("Resources");
 		return temp.generic_string();
 	}
 
 	/// Tries to get the path to file recursively. 
-	inline std::string GetFilePath(const PathDirectory& entryDir, const char* fileName) {
-
-		if (!std::filesystem::exists(entryDir) || !std::filesystem::is_directory(entryDir))
+	inline std::string GetFilePath(const PathDirectory& entryDir, const char* fileName)
+	{
+		if (!exists(entryDir) || !is_directory(entryDir))
 			return "";
 
 		for (const auto& currentPath : std::filesystem::directory_iterator(entryDir))
 		{
-
-			if (std::filesystem::is_directory(currentPath.path()))
+			if (is_directory(currentPath.path()))
 			{
 				PathDirectory path = GetFilePath(currentPath.path(), fileName);
 
@@ -35,11 +36,8 @@ namespace OGLE::FileHandler {
 
 				return path.generic_string();
 			}
-			else
-			{
-				if (currentPath.path().filename() == fileName)
-					return currentPath.path().generic_string();
-			}
+			if (currentPath.path().filename() == fileName)
+				return currentPath.path().generic_string();
 		}
 		return "";
 	}
@@ -48,9 +46,10 @@ namespace OGLE::FileHandler {
 	inline std::string GetResourcePath(const char* fileName) { return GetFilePath(GetResourcePath(), fileName); }
 
 
-	inline void RenameFile(const PathDirectory& filePath, const char* newName) {
-
-		if (!std::filesystem::exists(filePath)) {
+	inline void RenameFile(const PathDirectory& filePath, const char* newName)
+	{
+		if (!exists(filePath))
+		{
 			std::cout << "[FILEHANDLER -> RenameFile -> filePath] Path does not exist";
 			return;
 		}
@@ -58,25 +57,29 @@ namespace OGLE::FileHandler {
 		std::filesystem::rename(filePath, newName);
 	}
 
-	inline void CopyFile(const PathDirectory& from, const PathDirectory& to) {
-		if (!std::filesystem::exists(from)) {
+	inline void CopyFile(const PathDirectory& from, const PathDirectory& to)
+	{
+		if (!exists(from))
+		{
 			std::cout << "[FILEHANDLER -> CopyFile -> from] Path does not exist";
 			return;
 		}
-		else if (!std::filesystem::exists(to)) {
+		if (!exists(to))
+		{
 			std::cout << "[FILEHANDLER -> RenameFile -> to] Path does not exist";
 			return;
 		}
-		std::filesystem::copy(from, to);
+		copy(from, to);
 	}
 
-	inline void RemoveFile(const PathDirectory& path) {
-		if (!std::filesystem::exists(path)) {
+	inline void RemoveFile(const PathDirectory& path)
+	{
+		if (!exists(path))
+		{
 			std::cout << "[FILEHANDLER -> RemoveFile] Path does not exist";
 			return;
 		}
 
 		std::filesystem::remove(path);
 	}
-
 }

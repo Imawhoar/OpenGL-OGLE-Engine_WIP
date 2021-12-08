@@ -1,26 +1,24 @@
 #pragma once
+#include "Vector.h"
 #include "glm/gtc/matrix_transform.hpp"
 namespace OGLE
 {
-	typedef glm::mat2 Matrix2;
-	typedef glm::mat3 Matrix3;
-	typedef glm::mat4 Matrix4;
+	using Matrix2 = glm::mat2;
+	using Matrix3 = glm::mat3;
+	using Matrix4 = glm::mat4;
 
-	namespace Matrix
-	{
-		
 	template<typename T>
-	auto Perspective(T fov, T aspect, T nearClip , T farClip)
+	auto Perspective(T fov, T aspect, T nearClip, T farClip)
 	{
 		return glm::perspective(fov, aspect, nearClip, farClip);
 	}
 
-	auto Translate(const Matrix4& model, const Vector3& delta)
+	inline auto Translate(const Matrix4& model, const Vector3& delta)
 	{
 		return glm::translate(model, delta);
 	}
 
-	auto Scale(const Matrix4& model, const Vector3& delta)
+	inline auto Scale(const Matrix4& model, const Vector3& delta)
 	{
 		return glm::scale(model, delta);
 	}
@@ -30,11 +28,9 @@ namespace OGLE
 	{
 		return glm::rotate(model, angle, delta);
 	}
-	
-	auto LookAt(const Vector3& eye, const Vector3& center, const Vector3& up)
+
+	inline auto LookAt(const Vector3& eye, const Vector3& center, const Vector3& up)
 	{
 		return glm::lookAt(eye, center, up);
-	}
-
 	}
 }

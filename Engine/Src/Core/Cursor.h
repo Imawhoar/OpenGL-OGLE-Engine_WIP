@@ -1,12 +1,12 @@
 ﻿#pragma once
-#include "GLFW/glfw3.h"
+#include "OEPCH.h"
 #include "Point.h"
 namespace OGLE
 {
 	class Cursor
 	{
 	public:
-		void UpdateMouse(GLFWwindow* window)
+		void Update(GLFWwindow* window)
 		{
 			glfwGetCursorPos(window, &position.x, &position.y);
 			delta = position - oldPosition;

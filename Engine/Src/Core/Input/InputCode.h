@@ -1,4 +1,5 @@
 #pragma once
+
 namespace OGLE
 {
 	enum class InputType
@@ -10,8 +11,8 @@ namespace OGLE
 	};
 	enum class PressType
 	{
-		Down = GLFW_PRESS,
-		Release = GLFW_RELEASE,
+		Down = 1,
+		Release = 0,
 	};
 	enum class KeyCode : int {
 		SPACE = 32,

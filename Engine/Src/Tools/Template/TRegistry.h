@@ -14,20 +14,17 @@ namespace OGLE::Template
 
 		static V& Get(const K& key) { return TRegistry::Instance().INTERAL_Get(key); }
 		static bool Exists(const K& key) { return TRegistry::Instance().INTERAL_Exists(key); }
-		static void Insert(const K& key, const V& val) { TRegistry::Instance().INTERAL_Insert(key, val); }
+		static void Register(const K& key, const V& val) { TRegistry::Instance().INTERNAL_Register(key, val); }
 
 		~TRegistry() override { m_registry.erase(m_registry.begin(), m_registry.end()); }
 
 
 	private:
 		//Internals
-		[[nodiscard]] auto& INTERAL_Get(const K& key) { return m_registry[key]; }
-		[[nodiscard]] auto  INTERAL_Exists(const K& key) { return m_registry.find(key); }
-		
-		void INTERAL_Insert(const K& key, const V& val) { m_registry[key] = val; }
-	public:
+		[[nodiscard]] V& INTERAL_Get(const K& key) { return m_registry[key]; }
+		[[nodiscard]] bool  INTERAL_Exists(const K& key) { return m_registry.find(key); }
+		void INTERNAL_Register(const K& key, const V& val) { m_registry[key] = val; }
 		std::unordered_map<K, V> m_registry;
-
 	};
 }
 namespace OGLE::Registry
