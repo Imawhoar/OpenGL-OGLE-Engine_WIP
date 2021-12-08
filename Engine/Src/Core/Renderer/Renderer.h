@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 namespace OGLE
 {
@@ -7,12 +8,10 @@ namespace OGLE
 	{
 	private:
 		Scene* m_scene;
-
 	public:
 		Renderer() = default;
 
 	public:
 		void Render() const;
-
 	};
 }

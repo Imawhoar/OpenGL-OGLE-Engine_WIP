@@ -3,7 +3,6 @@
 #include "Input/InputManager.h"
 #include "Renderer/Renderer.h"
 #include "World/World.h"
-#include "Renderer/Renderer.h"
 
 namespace OGLE
 {
@@ -18,7 +17,7 @@ namespace OGLE
 		std::string windowName{};
 		unsigned int screenWidth{};
 		unsigned int screenHeight{};
-	public:
+
 		[[nodiscard]] bool WindowShouldClose() const;
 		[[nodiscard]] bool Initialize();
 		[[nodiscard]] float GetWindowAspectRatio() const;
