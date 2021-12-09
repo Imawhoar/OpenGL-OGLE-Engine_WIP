@@ -6,12 +6,13 @@ namespace OGLE
 	void Renderer::Render() const
 	{
 		//TODO: This should obviously not be in here. We should probably do a 
-		const auto view = m_scene->m_Registry.view<TransformComponent, RectComponent>();
+		/*const auto view = m_scene->m_Registry.view<TransformComponent, RectComponent>();
 		for (auto entity : view)
 		{
 			auto [transform, rect] = view.get(entity);
 
-		}
+		}*/
+
 		//for (auto* target : actors)
 		//{
 		//	target->GetRect()->Bind();

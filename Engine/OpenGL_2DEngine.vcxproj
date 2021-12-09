@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -166,8 +166,19 @@
     <ClInclude Include="Dependencies\entt\include\entt\entt.hpp" />
     <ClInclude Include="Src\Actors\ActorObject.h" />
     <ClInclude Include="Src\Actors\PlayerObject.h" />
+    <ClInclude Include="Src\Core\Camera\Camera.h" />
+    <ClInclude Include="Src\Core\Camera\EditorCamera.h" />
+    <ClInclude Include="Src\Core\Camera\OrthographicCamera.h" />
     <ClInclude Include="Src\Core\Cursor.h" />
+    <ClInclude Include="Src\Core\Input\InputAction.h" />
+    <ClInclude Include="Src\Core\Input\InputCode.h" />
+    <ClInclude Include="Src\Core\Input\InputManager.h" />
+    <ClInclude Include="Src\Core\Input\InputProfile.h" />
     <ClInclude Include="Src\Core\Point.h" />
+    <ClInclude Include="Src\Core\Rect.h" />
+    <ClInclude Include="Src\Core\Renderer\OGLEBatchSystem.h" />
+    <ClInclude Include="Src\Core\Renderer\Renderer.h" />
+    <ClInclude Include="Src\OEPCH.h" />
     <ClInclude Include="Src\OGLE.h" />
     <ClInclude Include="Src\Scene\Components.h" />
     <ClInclude Include="Src\Scene\Entity.h" />
@@ -175,6 +186,7 @@
     <ClInclude Include="Src\Tools\Input\InputProfile.h" />
     <ClInclude Include="Src\Tools\Input\InputAction.h" />
     <ClInclude Include="Src\Tools\Template\Delegate\TDelegateInterface.h" />
+    <ClInclude Include="Src\Tools\Template\TDelegate.h" />
     <ClInclude Include="Src\Utils\Math.h" />
     <ClInclude Include="Src\Utils\Color.h" />
     <ClInclude Include="Src\Resources\Resource.h" />
@@ -195,10 +207,39 @@
     <ClInclude Include="Src\Tools\Template\TPureSingleton.h" />
     <ClInclude Include="Src\Utils\Matrix.h" />
     <ClInclude Include="Src\Utils\Quaternion.h" />
+    <ClInclude Include="Src\Utils\Utils.h" />
     <ClInclude Include="Src\Utils\Vector.h" />
+    <ClInclude Include="Src\World\Actors\ActorBase.h" />
+    <ClInclude Include="Src\World\Actors\PlayerObject.h" />
+    <ClInclude Include="Src\World\DefaultWorldManager.h" />
+    <ClInclude Include="Src\World\Scene\Components.h" />
+    <ClInclude Include="Src\World\Scene\Entity.h" />
+    <ClInclude Include="Src\World\Scene\Scene.h" />
+    <ClInclude Include="Src\World\World.h" />
+    <ClInclude Include="Src\World\WorldManager.h" />
+    <ClInclude Include="Src\World\WorldState.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Core\Application.cpp" />
+    <ClCompile Include="Src\Core\Camera\Camera.cpp" />
+    <ClCompile Include="Src\Core\Camera\EditorCamera.cpp" />
+    <ClCompile Include="Src\Core\Camera\OrthographicCamera.cpp" />
+    <ClCompile Include="Src\Core\Input\InputAction.cpp" />
+    <ClCompile Include="Src\Core\Input\InputManager.cpp" />
+    <ClCompile Include="Src\Core\Rect.cpp" />
+    <ClCompile Include="Src\Core\Renderer\Renderer.cpp" />
+    <ClCompile Include="Src\Core\Texture.cpp" />
+    <ClCompile Include="Src\Core\Time.cpp" />
+    <ClCompile Include="Src\Core\Transform.cpp" />
     <ClCompile Include="Src\main.cpp" />
+    <ClCompile Include="Src\Resources\Image.cpp" />
+    <ClCompile Include="Src\Resources\Shader.cpp" />
+    <ClCompile Include="Src\Utils\Color.cpp" />
+    <ClCompile Include="Src\World\Actors\ActorBase.cpp" />
+    <ClCompile Include="Src\World\DefaultWorldManager.cpp" />
+    <ClCompile Include="Src\World\Scene\Scene.cpp" />
+    <ClCompile Include="Src\World\World.cpp" />
+    <ClCompile Include="Src\World\WorldState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Images\square.png" />
