@@ -31,8 +31,8 @@ project "Engine"
 	includedirs
 	{
 		"src",
-		"%{IncludeDir.glfw}",
-		"%{IncludeDir.glad}",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
 		"%{IncludeDir.entt}",
