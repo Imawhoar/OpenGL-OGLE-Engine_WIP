@@ -1,4 +1,5 @@
-﻿#include "Core/Input/InputManager.h"
+#include "Core/Input/InputManager.h"
+
 #include <iostream>
 #include "Core/Input/InputAction.h"
 
