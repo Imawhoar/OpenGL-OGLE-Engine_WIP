@@ -1,4 +1,5 @@
 #include "OGLE.h"
+
 #define LOG(message) std::cout << (message) << '\n'
 
 using namespace OGLE;
