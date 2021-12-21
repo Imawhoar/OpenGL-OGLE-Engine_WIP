@@ -1,5 +1,3 @@
-
--- premake5.lua
 project "Engine"
 	kind "StaticLib"
 	language "C++"
@@ -16,10 +14,10 @@ project "Engine"
 	{
 		"src/**.h",
 		"src/**.cpp",
-		"%{wks.location}/ThirdParty/stb_image/**.h",
-		"%{wks.location}/ThirdParty/stb_image/**.cpp",
-		"%{wks.location}/ThirdParty/glm/glm/**.hpp",
-		"%{wks.location}/ThirdParty/glm/glm/**.inl",
+		"ThirdParty/stb_image/**.h",
+		"ThirdParty/stb_image/**.cpp",
+		"ThirdParty/glm/glm/**.hpp",
+		"ThirdParty/glm/glm/**.inl",
 	}
 
 	defines
