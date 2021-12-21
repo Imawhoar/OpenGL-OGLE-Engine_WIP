@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "OEPCH.h"
+#include "oepch.h"
 #include "Point.h"
 namespace OGLE
 {

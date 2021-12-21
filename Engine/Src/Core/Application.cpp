@@ -1,6 +1,6 @@
 ﻿#include "Core/Application.h"
+#include "oepch.h"
 
-#include "OEPCH.h"
 #include <iostream>
 
 namespace OGLE
