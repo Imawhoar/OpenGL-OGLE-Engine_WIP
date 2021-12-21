@@ -7,7 +7,7 @@ project "Engine"
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
-	pchheader "OEPCH.h"
+	pchheader "src/OEPCH.h"
 	pchsource "src/OEPCH.cpp"
 
 	files
