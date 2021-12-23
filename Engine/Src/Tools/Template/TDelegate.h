@@ -1,6 +1,6 @@
 #pragma once
 #include <functional>
-
+#include <vector>
 #define OGLE_EVENT(ret, ...) typedef OGLE::Template::TDelegate<ret, __VA_ARGS__>
 #define OGLE_CALLBACK(...) typedef OGLE::Template::TDelegate<void, __VA_ARGS__>
 

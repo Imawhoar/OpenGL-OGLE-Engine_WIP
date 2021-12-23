@@ -1,6 +1,5 @@
 #pragma once
 
-#include "oepch.h"
 
 #include "World/Scene/Scene.h"
 #include "World/Scene/Components.h"

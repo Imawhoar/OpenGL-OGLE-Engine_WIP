@@ -1,5 +1,5 @@
-﻿#include "Transform.h"
-#include <glm/detail/type_quat.hpp>
+#include "Transform.h"
+#include "glm/detail/type_quat.hpp"
 
 namespace OGLE
 {

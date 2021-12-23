@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-#include "oepch.h"
+#include "oglepch.h"
 #include "InputCode.h"
 #include "Tools/Template/TDelegate.h"
 
