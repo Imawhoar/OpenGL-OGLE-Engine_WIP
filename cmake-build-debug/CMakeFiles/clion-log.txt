@@ -1,8 +1,0 @@
-"/Users/salartelo/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /Users/salartelo/Documents/Programming/C++/git/OGLE-Engine
--- Build spdlog: 1.9.2
--- Build type: Debug
--- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
--- Using Cocoa for window creation
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug
