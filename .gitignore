@@ -43,6 +43,7 @@
 *.app
 
 cmake-build-*/
+build/
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
