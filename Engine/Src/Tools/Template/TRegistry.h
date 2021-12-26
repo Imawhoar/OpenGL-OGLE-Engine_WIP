@@ -1,9 +1,6 @@
 #pragma once
 #include <unordered_map>
 #include "TPureSingleton.h"
-
-
-
 namespace OGLE::Template
 {
 	// TODO: Decide whether registry should be a singleton or instanced

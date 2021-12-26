@@ -1,5 +1,5 @@
 #pragma once
-#include "OEPCH.h"
+#include "oglepch.h"
 namespace OGLE::Template {
 
 	template < typename T >
@@ -17,6 +17,4 @@ namespace OGLE::Template {
 		TPureSingleton() = default;
 		virtual ~TPureSingleton() = default;
 	};
-
-
 }

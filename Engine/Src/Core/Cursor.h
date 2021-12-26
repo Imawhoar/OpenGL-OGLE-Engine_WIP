@@ -1,6 +1,6 @@
 ﻿#pragma once
-#include "oepch.h"
-#include "Point.h"
+#include "oglepch.h"
+#include "Input/Point.h"
 namespace OGLE
 {
 	class Cursor

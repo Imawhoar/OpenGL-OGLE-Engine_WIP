@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../ThirdParty/Glad/include/KHR/khrplatform.h
+stdint.h
+-
+inttypes.h
+-
+stdint.h
+-
+
+../ThirdParty/Glad/include/glad/glad.h
+windows.h
+-
+KHR/khrplatform.h
+../ThirdParty/Glad/include/glad/KHR/khrplatform.h
+
+/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/Glad/src/glad.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+glad/glad.h
+/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/Glad/src/glad/glad.h
+windows.h
+-
+winapifamily.h
+-
+dlfcn.h
+-
+

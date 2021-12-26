@@ -1,7 +1,6 @@
 ﻿#include "Core/Application.h"
-#include "oepch.h"
+#include "oglepch.h"
 
-#include <iostream>
 
 namespace OGLE
 {
@@ -11,7 +10,6 @@ namespace OGLE
 	}
 	bool WindowsData::Initialize()
 	{
-
 		//INITIALIZE GLFW
 		//Exit out of the program if GLFW failed to init.
 		if (!glfwInit()) {
@@ -24,7 +22,13 @@ namespace OGLE
 		//MAJOR and MINOR could be 4 and 2 and that would be equal to version 4.2
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, versionMajor);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, versionMinor);
-
+#ifdef __APPLE__
+        /* We need to explicitly ask for a 3.2 context on OS X */
+        glfwWindowHint (GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint (GLFW_CONTEXT_VERSION_MINOR, 2);
+        glfwWindowHint (GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+        glfwWindowHint (GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+#endif
 		//Make sure the player cannot resize the window
 		//TODO: Figure out if it's worth letting the user resize.
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
@@ -102,6 +106,7 @@ namespace OGLE
 			glfwPollEvents();
 			m_world.Tick();
 			m_renderer.Render();
+
 		}
 	}
 }

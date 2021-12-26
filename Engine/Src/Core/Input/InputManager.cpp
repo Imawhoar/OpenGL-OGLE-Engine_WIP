@@ -37,12 +37,12 @@ namespace OGLE
 		}
 		if (createIfNotFound)
 		{
-			std::cout << ("COULD NOT FIND ACTION: \"{0}\"!\n", name.c_str());
-			std::cout << ("CREATING \"{0}\"...\n", name.c_str());
-			return CreateAction(name)->GetAction(name);
+			std::cout << "COULD NOT FIND ACTION: "<< name.c_str() << "\n";
+			std::cout << "CREATING " << name.c_str() << "...\n";
+            return CreateAction(name)->GetAction(name);
 		}
 
-		std::cout << ("COULD NOT FIND ACTION: \"{0}\"!\n", name.c_str());
+		std::cout << "COULD NOT FIND ACTION: " <<  name.c_str() << "\n";
 		return nullptr;
 	}
 

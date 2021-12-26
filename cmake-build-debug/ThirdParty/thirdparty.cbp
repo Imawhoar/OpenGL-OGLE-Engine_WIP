@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="thirdparty"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\ThirdParty\;CMake Files\ThirdParty\GLFW\;CMake Files\ThirdParty\GLFW\CMake\;CMake Files\ThirdParty\GLFW\src\;CMake Files\ThirdParty\Glad\;CMake Files\ThirdParty\spdlog\;CMake Files\ThirdParty\spdlog\cmake\;CMake Files\Engine\;CMake Files\Sandbox\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad">
+				<Option output="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/Glad/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/Makefile&quot;  VERBOSE=1 glad"/>
+					<CompileFile command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glad/fast">
+				<Option output="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/libglad.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/Glad/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/Makefile&quot;  VERBOSE=1 glad/fast"/>
+					<CompileFile command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/Glad/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spdlog">
+				<Option output="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/libspdlogd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSPDLOG_COMPILED_LIB"/>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/Makefile&quot;  VERBOSE=1 spdlog"/>
+					<CompileFile command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spdlog/fast">
+				<Option output="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/libspdlogd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSPDLOG_COMPILED_LIB"/>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/Makefile&quot;  VERBOSE=1 spdlog/fast"/>
+					<CompileFile command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="uninstall">
+				<Option working_dir="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/Makefile&quot;  VERBOSE=1 uninstall"/>
+					<CompileFile command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/include"/>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src"/>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/include"/>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src"/>
+					<Add directory="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/bin/gmake -j10 -f &quot;/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/include/GLFW/glfw3.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/include/GLFW/glfw3native.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/cocoa_init.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/cocoa_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/cocoa_joystick.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/cocoa_monitor.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/cocoa_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/cocoa_time.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/cocoa_window.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/egl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/egl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/input.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/internal.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/mappings.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/nsgl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/nsgl_context.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/osmesa_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/osmesa_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/posix_thread.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/posix_thread.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/vulkan.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/Glad/src/glad.c">
+			<Option target="glad"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/async.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/async_logger-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/async_logger.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/common-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/common.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/backtracer-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/backtracer.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/circular_q.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/console_globals.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/file_helper-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/file_helper.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/fmt_helper.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/log_msg-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/log_msg.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/log_msg_buffer-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/log_msg_buffer.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/mpmc_blocking_q.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/null_mutex.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/os-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/os.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/periodic_worker-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/periodic_worker.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/registry-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/registry.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/synchronous_factory.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/tcp_client-windows.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/tcp_client.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/thread_pool-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/thread_pool.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/udp_client-windows.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/udp_client.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/details/windows_include.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bin_to_hex.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/args.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/chrono.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/color.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/compile.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/core.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/format-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/format.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/locale.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/os.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/ostream.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/printf.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/ranges.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/bundled/xchar.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/chrono.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/compile.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/fmt.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/ostr.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fmt/xchar.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/formatter.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/fwd.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/logger-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/logger.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/pattern_formatter-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/pattern_formatter.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/android_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/ansicolor_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/ansicolor_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/base_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/base_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/basic_file_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/basic_file_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/daily_file_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/dist_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/dup_filter_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/hourly_file_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/mongo_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/msvc_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/null_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/ostream_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/qt_sinks.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/ringbuffer_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/rotating_file_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/rotating_file_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/stdout_color_sinks-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/stdout_color_sinks.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/stdout_sinks-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/stdout_sinks.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/syslog_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/systemd_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/tcp_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/udp_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/win_eventlog_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/wincolor_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/sinks/wincolor_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/spdlog-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/spdlog.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/stopwatch.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/tweakme.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/include/spdlog/version.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/src/async.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/src/cfg.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/src/color_sinks.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/src/file_sinks.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/src/fmt.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/src/spdlog.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/src/stdout_sinks.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/cmake-build-debug/ThirdParty/GLFW/src/glfw_config.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ThirdParty\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ThirdParty\GLFW\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/CMake/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\ThirdParty\GLFW\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/CMake/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\ThirdParty\GLFW\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/CMake/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\ThirdParty\GLFW\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ThirdParty\GLFW\src\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/GLFW/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\ThirdParty\GLFW\src\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/Glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ThirdParty\Glad\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\ThirdParty\spdlog\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/cmake/ide.cmake">
+			<Option virtualFolder="CMake Files\ThirdParty\spdlog\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/ThirdParty/spdlog/cmake/utils.cmake">
+			<Option virtualFolder="CMake Files\ThirdParty\spdlog\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/Engine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Engine\"/>
+		</Unit>
+		<Unit filename="/Users/salartelo/Documents/Programming/C++/git/OGLE-Engine/Sandbox/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Sandbox\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
