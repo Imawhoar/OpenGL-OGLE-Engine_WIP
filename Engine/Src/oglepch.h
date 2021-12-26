@@ -2,11 +2,16 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
-
-
 #include <string>
 #include <memory>
 #include <cstdint>
+#include <vector>
+
+#ifdef _WIN32
+#ifndef NOMINMAX
+#define NOMINMAX // See github.com/skypjack/entt/wiki/Frequently-Asked-Questions#warning-c4003-the-min-the-max-and-the-macro
+#endif
+#endif
 
 template<typename T>
 using RefPtr = std::shared_ptr<T>;
