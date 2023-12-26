@@ -1,6 +1,5 @@
 # OGLE-Engine
-This project is not meant to be used by any means. 
-The purpose of this project is to create a easy to use 2d Game engine with C++, and in the future C#-scripting. 
-As of writing this, it lacks a lot of features as the main architecture is still being developed.
+This repository is an archive of my first try of making my first game engine. It is NOT meant to actually be used.  
+The purpose of this project was my introduction to create an incredibly simplified 2d Game engine with C++, with future plans for C#-scripting. 
 
-DO NOT expect this puppy to work out of the box in it's current state.
+As of writing this, the engine lacks a lot of core functionalit, and is the result of improper planning and beginners naievty.
